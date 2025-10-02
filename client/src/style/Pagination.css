@@ -1,0 +1,91 @@
+/* pretty-pagination.css */
+.ppg-wrap :where(.ant-pagination) {
+  display: inline-flex;
+  gap: 0; /* các ô sát nhau */
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 0; /* viền ngoài */
+}
+
+/* Ô chung */
+.ppg-box,
+.ant-pagination-item,
+.ant-pagination-item-link {
+  min-width: 64px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  border-right: 1px solid #e5e5e5 !important;
+  box-sizing: border-box;
+  font-size: 22px;
+  color: #6b7280; /* xám */
+  background: #fff;
+}
+
+/* Bỏ viền phải cho ô cuối cùng */
+.ppg-wrap .ant-pagination > li:last-child .ppg-box,
+.ppg-wrap .ant-pagination > li:last-child .ant-pagination-item-link,
+.ppg-wrap .ant-pagination > li:last-child.ant-pagination-item {
+  border-right: none !important;
+}
+
+/* Mục số bình thường khớp ô custom */
+.ant-pagination-item {
+  border: none !important;
+  border-right: 1px solid #e5e5e5 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  min-width: 64px;
+  height: 48px;
+}
+
+/* Active giống nền xám nhạt */
+.ant-pagination-item-active a {
+  background: #f3f4f6;
+  color: #374151;
+  border-radius: 0;
+}
+
+/* Nút prev/next gộp */
+.ppg-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  user-select: none;
+}
+.ppg-half {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 48px;
+  font-size: 22px;
+}
+
+/* Hover nhẹ */
+.ppg-box:hover,
+.ant-pagination-item:hover a,
+.ant-pagination-item-link:hover {
+  background: #f9fafb;
+}
+
+/* Ẩn mũi tên mặc định của antd (ta render custom rồi) */
+.ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link {
+  border: none !important;
+  width: 64px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0;
+}
+
+/* Bo góc toàn khối */
+.ppg-wrap .ant-pagination > li:first-child .ppg-box {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.ppg-wrap .ant-pagination > li:last-child .ppg-box {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}

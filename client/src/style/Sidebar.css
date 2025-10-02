@@ -1,0 +1,92 @@
+.sidebar-signout {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
+  padding-left: 30px;
+  background: #12896d;
+  transition: background 0.2s;
+}
+.sidebar-signout.collapsed {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding-left: 25px;
+}
+.sidebar-signout-icon {
+  width: 30px;
+  height: 30px;
+}
+.sidebar-signout-text {
+  margin-left: 8px;
+}
+
+.custom-sidebar-menu .ant-menu-item-icon {
+  background-color: hsl(211, 13%, 39%);
+  color: #a7b1c2;
+  border-radius: 100%;
+}
+
+.custom-sidebar-menu .ant-menu-item-selected {
+  background-color: #293846 !important;
+  color: #fff !important;
+}
+
+.custom-sidebar-menu .ant-menu-item-selected .sidebar-icon-circle {
+  background: #1ab394;
+}
+
+.custom-sidebar-menu .ant-menu-item-selected .sidebar-icon-circle img {
+  filter: brightness(0) invert(1);
+}
+
+.custom-sidebar-menu .ant-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50px;
+}
+
+.ant-layout-sider-collapsed .custom-sidebar-menu .ant-menu-item {
+  justify-content: center !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.ant-layout-sider-collapsed .ant-menu-item {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 24px !important;
+}
+
+.ant-layout-sider-collapsed .ant-menu-item-only-child {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.ant-layout-sider-collapsed .ant-menu-item > .ant-menu-title-content {
+  display: none !important;
+}
+
+.ant-layout-sider-collapsed .ant-menu-item > span:first-child {
+  margin: 0 auto !important;
+}
+
+.sidebar-icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  box-sizing: border-box;
+}
