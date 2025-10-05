@@ -1,10 +1,15 @@
 import { Layout, theme } from "antd";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import SideBar from "../components/Sidebar";
 import { Content } from "antd/es/layout/layout";
 import HeaderLayout from "../components/Header";
 
 export default function DashboardLayout() {
+  const location = useLocation();
+  const path = location.pathname.replace("/", "");
+
+  console.log(path);
+
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -28,19 +33,32 @@ export default function DashboardLayout() {
             fontWeight: 500,
           }}
         >
-          <div className="text-[#676A6C] text-[24px]">Recipes</div>
+          <div className="text-[#676A6C] text-[24px]">
+            {path === "Foods" ? "Food databases" : "Recipes"}
+          </div>
           <div className="text-[#888888] text-[13px]">
-            Create, check and update recipes
+            {path === "Foods"
+              ? "Create, check and update foods that you can use on meal plans"
+              : "Create, check and update recipes"}
           </div>
         </div>
 
         <Content
           style={{
             margin: "24px 16px",
-            padding: 24,
+            padding:
+              path.startsWith("Recipes/") || path.includes("AddRecipes")
+                ? 0
+                : 24,
             minHeight: 280,
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
+            background:
+              path.startsWith("Recipes/") || path.includes("AddRecipes")
+                ? "#F5F5F5"
+                : colorBgContainer,
+            borderRadius:
+              path.startsWith("Recipes/") || path.includes("AddRecipes")
+                ? 0
+                : borderRadiusLG,
           }}
         >
           {/* Nội dung pages */}

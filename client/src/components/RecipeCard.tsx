@@ -18,6 +18,7 @@ type Props = {
   category: string;
   likes: number;
   nutrients: Nutrients;
+  openRecipeDetail: () => void;
 };
 
 export default function RecipeCard({
@@ -28,13 +29,15 @@ export default function RecipeCard({
   category,
   likes,
   nutrients,
+  openRecipeDetail,
 }: Props) {
   return (
     <Card
-      bordered
-      className="rounded-2xl shadow-sm border-gray-200/70"
-      bodyStyle={{ padding: 0 }}
+      variant="outlined"
+      className="rounded-2xl shadow-sm border-2 border-gray-200/70 hover:!border-emerald-400 transition-colors cursor-pointer"
+      styles={{ body: { padding: 0 } }}
       style={{ width: 580, height: 220 }}
+      onClick={openRecipeDetail}
     >
       <div className="grid grid-cols-12">
         <div className="col-span-5 relative">

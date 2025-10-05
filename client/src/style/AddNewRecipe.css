@@ -1,0 +1,694 @@
+.containerRecipeDetail {
+  margin: 25px 15px;
+  display: flex;
+  gap: 30px;
+}
+
+.infoLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.recipeMenu {
+  width: 275px;
+  height: 327px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 20px 20px;
+  box-shadow: rgba(144, 144, 144, 0.14) 0px 2px 2px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.firstMenu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.myRecipes {
+  display: flex;
+  gap: 7.64px;
+  padding: 7.25px 10px;
+  border-radius: 6px;
+  box-shadow: 0px 1px 3px #dddddd;
+}
+
+.myRecipes div {
+  color: #2ba0cc;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.recipeLike {
+  width: 60px;
+  height: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 13px;
+  padding: 7px;
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 4px;
+}
+
+.recipeLike div {
+  color: rgb(170, 170, 170);
+  font-size: 11px;
+}
+
+.addImgRecipe {
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.addImgRecipe .inputLinkImg {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 110px;
+  font-size: 12px;
+  border-radius: 3px;
+  height: 27px;
+  border: 1px solid #f3f3f4;
+  padding: 0px 7px;
+  color: #676a6c;
+}
+
+.addImgRecipe .imgRecipe img {
+  display: none;
+  width: 100%;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.categoryRecipe {
+  width: 110px !important;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 7px;
+  border: 1px solid rgb(243, 243, 244);
+  width: auto;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.categoryRecipe div {
+  margin-left: 5px;
+  font-size: 12px;
+  color: rgb(103, 106, 108);
+}
+
+.publicRecipe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgba(144, 144, 144, 0.14);
+  padding: 20px;
+}
+
+.publicRecipe .pubicRecipeTitle h2 {
+  font-size: 20px;
+  color: #676a6c;
+}
+
+.publicRecipe .pubicRecipeTitle p {
+  font-size: 12px;
+  color: #888888;
+}
+
+.publicRecipe .btnPublish {
+  padding: 7.5px 13px;
+  background-color: #1ab394;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.recipeInfo {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(144, 144, 144, 0.14) 0px 2px 2px 0px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.recipeInfo .recipeTitle {
+  margin-bottom: 22px;
+}
+
+.recipeInfo .recipeTitle h2 {
+  font-size: 22px;
+  font-weight: normal;
+  color: rgb(103, 106, 108);
+}
+
+.recipeInfo .recipeTitle p {
+  font-size: 12px;
+  color: rgb(136, 136, 136);
+}
+
+.recipeInfo .infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.recipeInfo .infoRow {
+  display: flex;
+  align-items: center;
+}
+
+.recipeInfo .infoRow .iconEdit {
+  width: 39px;
+  height: 39.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eeeeee;
+  border-left: 1px solid #ffffff;
+  background-color: #fafafb;
+}
+
+.recipeInfo .infoRow .infoName {
+  width: 200px;
+  height: 39.5px;
+  border: 1px solid #eeeeee;
+  background-color: #fafafb;
+  padding-left: 11px;
+  font-size: 14.3px;
+  color: #676a6c;
+  display: flex;
+  align-items: center;
+}
+
+.recipeInfo .infoRow .infoValue {
+  display: flex;
+}
+
+.recipeInfo .infoRow .infoValue input {
+  height: 39.5px;
+  width: 645px;
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0px 10px;
+  color: #676a6c;
+  border-left: 1px solid #ffffff;
+}
+
+.recipeInfo .infoRow .infoName.description {
+  height: 58px;
+}
+
+.recipeInfo .infoRow .infoValue.description {
+  padding-left: 0px;
+}
+
+.recipeInfo .infoRow .infoValue.description input {
+  height: 58px;
+  width: 645px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  color: #676a6c;
+  border: none;
+  border-left: 1px solid #ffffff;
+}
+
+.recipeInfo .infoRow .iconEdit.description {
+  height: 60px;
+}
+
+.creation {
+  width: 1170px;
+  height: 61px;
+  background-color: rgb(26, 179, 148);
+  margin: 0px 15px 25px;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.creation div:first-child {
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+}
+
+.creation div:last-child {
+  color: rgb(255, 255, 255);
+  font-size: 11px;
+}
+
+.recipeDetail .recipeDetailsTitle {
+  margin-bottom: 15px;
+}
+
+.recipeDetail .recipeDetailsTitle h2 {
+  font-size: 20px;
+  color: rgb(103, 106, 108);
+  font-weight: normal;
+}
+
+.recipeDetail .recipeDetailsTitle p {
+  font-size: 12px;
+  color: rgb(136, 136, 136);
+  font-weight: lighter;
+}
+
+.recipeDetail .recipeDetailCard {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  box-shadow: rgba(144, 144, 144, 0.14) 0px 2px 2px 0px;
+  border-radius: 5px;
+}
+
+.recipeDetail {
+  display: flex;
+  gap: 30px;
+  padding: 0px 15px;
+}
+
+.recipeDetail .ingredientCookingMethod .ingredientList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.recipeDetail .ingredientCookingMethod .ingredientList .ingredientCard {
+  display: flex;
+}
+
+.recipeDetail .ingredientCookingMethod .ingredientList .ingredientValue {
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredient .newIngredient {
+  width: 743.33px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fafafb;
+}
+
+.newIngredient .newIngredientTitle {
+  display: flex;
+  border: 1px solid #eeeeee;
+}
+
+.newIngredient .newIngredientTitle .img {
+  height: 40px;
+  width: 39px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f4;
+  cursor: pointer;
+}
+
+.newIngredient .newIngredientTitle div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  background-color: #ffffff;
+}
+
+.newIngredient .searchIngredient {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.newIngredient .searchIngredient input {
+  width: 200px;
+  height: 34px;
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  padding: 8px 13px;
+  color: #676a6c;
+}
+
+.newIngredient .searchIngredient input::placeholder {
+}
+
+.newIngredient .searchIngredient #searchFood {
+  width: 256px;
+}
+
+.newIngredient .searchIngredient .sortNutrient {
+  display: flex;
+}
+
+.newIngredient .searchIngredient .sortNutrient #inputNutrient {
+  width: 200px;
+  border: 1px solid #eeeeee;
+  padding-left: 12px;
+  color: #999999;
+  background-color: #fff;
+}
+
+.newIngredient .searchIngredient .sortNutrient div {
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eeeeee;
+  cursor: pointer;
+}
+
+.foodInfo {
+  padding: 0px 16px;
+  width: 100%;
+}
+
+.foodInfo .foodInfoHeader {
+  display: flex;
+  height: 53.5px;
+}
+
+.foodInfo .foodInfoHeader .text {
+  min-width: 411.33px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  color: #282828;
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+}
+
+.foodInfo .foodInfoHeader .foodNutrition {
+  display: flex;
+}
+
+.foodInfo .foodInfoHeader .foodNutrition div {
+  width: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafb;
+  border: 1px solid #eeeeee;
+  color: #282828;
+}
+
+.foodInfo .foodInfoHeader .foodNutrition .last {
+  width: 38px;
+  background-color: #ffffff;
+}
+
+.foodInfo .foodValue {
+  display: flex;
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  height: 101.05px;
+}
+
+.foodInfo .foodValueChoose {
+  background-color: #fafafb;
+  border: 1px solid #dddddd;
+}
+
+.foodValue .foodValueTitle {
+  width: 411.33px;
+  padding: 10px 21px;
+}
+
+.foodValueTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.foodValue .foodValueTitle h3 {
+  font-size: 15px;
+  color: #282828;
+  font-weight: normal;
+}
+
+.foodValue .foodValueTitle p {
+  font-size: 11.7px;
+  color: #282828;
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+
+.foodValue .foodValueTitle .foodQuantitative {
+  display: flex;
+}
+
+.foodValueTitle .foodQuantitative .foodQuantity {
+  width: 60px;
+  height: 32px;
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  color: #282828;
+  font-size: 12.4px;
+}
+
+.foodValueTitle .foodQuantitative .foodPortion {
+  width: 240.33px;
+  height: 32px;
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  color: #282828;
+  font-size: 12.4px;
+}
+
+.foodValueTitle .foodQuantitative .foodWeight {
+  width: 65px;
+  height: 32px;
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #282828;
+  font-size: 12.4px;
+}
+
+.foodValue .foodNutrition {
+  display: flex;
+  height: 100%;
+}
+
+.foodValue .foodNutrition div {
+  width: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #282828;
+}
+
+.foodValue .foodNutrition div span {
+  color: #282828;
+}
+
+.foodValue .addFood {
+  display: none;
+}
+
+.foodValueChoose .addFood {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1ab394;
+  cursor: pointer;
+}
+
+.foodValueChoose .addFood i {
+  color: #ffffff;
+}
+
+.ingredientCookingMethod .ingredientList .list {
+  width: 703.33px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-weight: bold;
+  color: #585858;
+  border: 1px solid #eeeeee;
+}
+
+.ingredientCookingMethod .cookingMethod .stepCook {
+  display: flex;
+}
+
+.ingredientCookingMethod .cookingMethod .stepCook .stepNumber {
+  width: 40px;
+  height: 40px;
+  background-color: #fafafb;
+  border: 1px solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #676a6c;
+  font-size: 14.3px;
+  font-weight: bold;
+}
+
+.cookingMethod .stepCook input {
+  width: 663.33px;
+  height: 40px;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  color: #888888;
+  border: 1px solid #eeeeee;
+}
+
+.cookingMethod .stepCook .iconEdit {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafb;
+  border: 1px solid #eeeeee;
+}
+
+.ingredientList .ingredientCard .removeFood {
+  width: 39px;
+  /* height: 80px; */
+  background-color: #fafafb;
+  border: 1px solid #eeeeee;
+  border-left: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nutrient {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 360px;
+}
+
+.global .energyGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgb(238, 238, 238);
+  margin-bottom: 25px;
+}
+
+.global .energyGroup .energy {
+  color: rgb(103, 106, 108);
+}
+
+.global .energyGroup .kcalInfo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.global .energyGroup .kcalValue {
+  font-size: 14px;
+  color: rgb(103, 106, 108);
+  font-weight: 550;
+}
+
+.global .energyGroup .kcal {
+  color: rgb(136, 136, 136);
+  font-size: 11px;
+}
+
+.globalCircle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.globalItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.globalCircle .circle {
+  width: 72.2px;
+  height: 72.2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 100%;
+}
+
+.globalCircle .globalItem .red {
+  border: 6px solid rgb(219, 73, 101);
+}
+
+.globalCircle .globalItem .orange {
+  border: 6px solid rgb(234, 159, 119);
+}
+
+.globalCircle .globalItem .green {
+  border: 6px solid rgb(26, 179, 148);
+}
+
+.globalCircle .globalItem .blue {
+  border: 6px solid rgb(106, 125, 147);
+}
+
+.globalCircle .circleValue {
+  font-size: 16px;
+  color: rgb(103, 106, 108);
+}
+
+.globalCircle .circleValue span {
+  font-size: 16px;
+  color: rgb(103, 106, 108);
+}
+
+.globalCircle .globalItem p {
+  color: rgb(136, 136, 136);
+}
+
+.micronutrient .nutrientItem {
+  display: flex;
+  justify-content: space-between;
+  height: 28px;
+}
+
+.micronutrient .nutrientItem:nth-child(2n + 1) {
+  background-color: rgb(250, 250, 251);
+}
+
+.micronutrient .nutrientName {
+  color: rgb(113, 113, 113);
+}
+
+.micronutrient .nutrientValue {
+  color: rgb(113, 113, 113);
+  font-weight: bold;
+}
+
+.micronutrient .nutrientValue span {
+  font-weight: normal;
+  color: rgb(113, 113, 113);
+}

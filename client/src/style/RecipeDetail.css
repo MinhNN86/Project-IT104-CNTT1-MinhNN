@@ -1,0 +1,401 @@
+.containerRecipeDetail {
+  margin: 25px 15px;
+  display: flex;
+  gap: 30px;
+}
+
+.infoLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.recipeMenu {
+  width: 275px;
+  height: 327px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 30px 20px;
+  box-shadow: rgba(144, 144, 144, 0.14) 0px 2px 2px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.firstMenu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.communityRecipes {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 10px;
+  box-shadow: rgb(221, 221, 221) 0px 1px 3px 0px;
+  border-radius: 6px;
+}
+
+.communityRecipes .communityRecipe {
+  color: rgb(234, 159, 119);
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.recipeLike {
+  width: 60px;
+  height: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 13px;
+  padding: 7px;
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 4px;
+}
+
+.recipeLike div {
+  color: rgb(170, 170, 170);
+  font-size: 11px;
+}
+
+.recipePicture img {
+  width: 100%;
+  margin: 10px 0px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.categoryRecipe {
+  width: 123px !important;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 7px;
+  border: 1px solid rgb(243, 243, 244);
+  width: auto;
+  border-radius: 3px;
+}
+
+.categoryRecipe div {
+  margin-left: 5px;
+  font-size: 12px;
+  color: rgb(103, 106, 108);
+}
+
+.addFavorite {
+  width: 143px;
+  height: 32px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 0px 13px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  border: 1px solid rgb(238, 238, 238);
+  cursor: pointer;
+}
+
+.addFavorite div {
+  color: rgb(103, 106, 108);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.recipeInfo {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(144, 144, 144, 0.14) 0px 2px 2px 0px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.recipeInfo .recipeTitle {
+  margin-bottom: 22px;
+}
+
+.recipeInfo .recipeTitle h2 {
+  font-size: 22px;
+  font-weight: normal;
+  color: rgb(103, 106, 108);
+}
+
+.recipeInfo .recipeTitle p {
+  font-size: 12px;
+  color: rgb(136, 136, 136);
+}
+
+.recipeInfo .infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.recipeInfo .infoRow {
+  display: flex;
+}
+
+.recipeInfo .infoRow .infoName {
+  width: 200px;
+  height: 41.5px;
+  border: 1px solid rgb(238, 238, 238);
+  background-color: rgb(250, 250, 251);
+  padding-left: 11px;
+  font-size: 14.3px;
+  color: rgb(103, 106, 108);
+  display: flex;
+  align-items: center;
+}
+
+.recipeInfo .infoRow .infoValue input {
+  height: 41.5px;
+  width: 645px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(238, 238, 238) rgb(238, 238, 238) rgb(238, 238, 238)
+    rgb(255, 255, 255);
+  border-image: initial;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0px 10px;
+  color: rgb(103, 106, 108);
+}
+
+.recipeInfo .infoRow .infoName.description {
+  height: 61px;
+}
+
+.recipeInfo .infoRow .infoValue.description {
+  width: 645px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  color: rgb(103, 106, 108);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(238, 238, 238) rgb(238, 238, 238) rgb(238, 238, 238)
+    rgb(255, 255, 255);
+  border-image: initial;
+}
+
+.creation {
+  width: 1170px;
+  height: 61px;
+  background-color: rgb(26, 179, 148);
+  margin: 0px 15px 25px;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.creation div:first-child {
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+}
+
+.creation div:last-child {
+  color: rgb(255, 255, 255);
+  font-size: 11px;
+}
+
+.recipeDetail .recipeDetailsTitle {
+  margin-bottom: 15px;
+}
+
+.recipeDetail .recipeDetailsTitle h2 {
+  font-size: 20px;
+  color: rgb(103, 106, 108);
+  font-weight: normal;
+}
+
+.recipeDetail .recipeDetailsTitle p {
+  font-size: 12px;
+  color: rgb(136, 136, 136);
+  font-weight: lighter;
+}
+
+.recipeDetail .recipeDetailCard {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  box-shadow: rgba(144, 144, 144, 0.14) 0px 2px 2px 0px;
+  border-radius: 5px;
+}
+
+.recipeDetail {
+  display: flex;
+  gap: 30px;
+  padding: 0px 15px;
+}
+
+.ingredientCookingMethod {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.ingredientCookingMethod .ingredient {
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.ingredientCookingMethod .ingredientValue {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ingredientCookingMethod .ingredientValue div {
+  width: 742.33px;
+  height: 40.5px;
+  display: flex;
+  align-items: center;
+  padding-left: 11px;
+  color: rgb(88, 88, 88);
+  font-weight: bold;
+  border: 1px solid rgb(238, 238, 238);
+}
+
+.ingredientCookingMethod .cookingMethod .stepCook {
+  display: flex;
+}
+
+.ingredientCookingMethod .cookingMethod .stepCook .stepNumber {
+  width: 40px;
+  background-color: rgb(250, 250, 251);
+  border: 1px solid rgb(238, 238, 238);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(103, 106, 108);
+  font-size: 14.3px;
+  font-weight: bold;
+}
+
+.ingredientCookingMethod .cookingMethod .stepCook .stepValue {
+  width: 703.33px;
+  padding: 11px 10px;
+  color: rgb(103, 106, 108);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(238, 238, 238) rgb(238, 238, 238) rgb(238, 238, 238)
+    rgb(255, 255, 255);
+  border-image: initial;
+  line-height: 19.5px;
+}
+
+.nutrient {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 360px;
+}
+
+.global .energyGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgb(238, 238, 238);
+  margin-bottom: 25px;
+}
+
+.global .energyGroup .energy {
+  color: rgb(103, 106, 108);
+}
+
+.global .energyGroup .kcalInfo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.global .energyGroup .kcalValue {
+  font-size: 14px;
+  color: rgb(103, 106, 108);
+  font-weight: 550;
+}
+
+.global .energyGroup .kcal {
+  color: rgb(136, 136, 136);
+  font-size: 11px;
+}
+
+.globalCircle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.globalItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.globalCircle .circle {
+  width: 72.2px;
+  height: 72.2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 100%;
+}
+
+.globalCircle .globalItem .red {
+  border: 6px solid rgb(219, 73, 101);
+}
+
+.globalCircle .globalItem .orange {
+  border: 6px solid rgb(234, 159, 119);
+}
+
+.globalCircle .globalItem .green {
+  border: 6px solid rgb(26, 179, 148);
+}
+
+.globalCircle .globalItem .blue {
+  border: 6px solid rgb(106, 125, 147);
+}
+
+.globalCircle .circleValue {
+  font-size: 16px;
+  color: rgb(103, 106, 108);
+}
+
+.globalCircle .circleValue span {
+  font-size: 16px;
+  color: rgb(103, 106, 108);
+}
+
+.globalCircle .globalItem p {
+  color: rgb(136, 136, 136);
+}
+
+.micronutrient .nutrientItem {
+  display: flex;
+  justify-content: space-between;
+  height: 28px;
+}
+
+.micronutrient .nutrientItem:nth-child(2n + 1) {
+  background-color: rgb(250, 250, 251);
+}
+
+.micronutrient .nutrientName {
+  color: rgb(113, 113, 113);
+}
+
+.micronutrient .nutrientValue {
+  color: rgb(113, 113, 113);
+  font-weight: bold;
+}
+
+.micronutrient .nutrientValue span {
+  font-weight: normal;
+  color: rgb(113, 113, 113);
+}

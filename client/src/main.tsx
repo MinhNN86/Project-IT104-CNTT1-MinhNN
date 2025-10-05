@@ -14,7 +14,7 @@ createRoot(document.getElementById("root")!).render(
       theme={{
         token: {
           colorPrimary: "#1AB394",
-          fontFamily: "Open Sans, sans-serif",
+          fontFamily: "Roboto, sans-serif",
         },
       }}
       locale={viVN} // Thiết lập ngôn ngữ Tiếng Việt

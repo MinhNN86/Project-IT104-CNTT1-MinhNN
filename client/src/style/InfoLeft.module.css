@@ -1,0 +1,98 @@
+/* InfoLeft Component Styles */
+.infoLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.recipeMenu {
+  width: 275px;
+  height: 327px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 30px 20px;
+  box-shadow: rgba(144, 144, 144, 0.14) 0px 2px 2px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.firstMenu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.communityRecipes {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 10px;
+  box-shadow: rgb(221, 221, 221) 0px 1px 3px 0px;
+  border-radius: 6px;
+}
+
+.communityRecipes .communityRecipe {
+  color: rgb(234, 159, 119);
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.recipeLike {
+  width: 60px;
+  height: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 13px;
+  padding: 7px;
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 4px;
+}
+
+.recipeLike div {
+  color: rgb(170, 170, 170);
+  font-size: 11px;
+}
+
+.recipePicture img {
+  width: 100%;
+  margin: 10px 0px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.categoryRecipe {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 7px;
+  border: 1px solid rgb(243, 243, 244);
+  width: auto;
+  border-radius: 3px;
+}
+
+.categoryRecipe div {
+  margin-left: 5px;
+  font-size: 12px;
+  color: rgb(103, 106, 108);
+}
+
+.addFavorite {
+  width: 143px;
+  height: 32px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 0px 13px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  border: 1px solid rgb(238, 238, 238);
+  cursor: pointer;
+}
+
+.addFavorite div {
+  color: rgb(103, 106, 108);
+  font-size: 12px;
+  font-weight: bold;
+}

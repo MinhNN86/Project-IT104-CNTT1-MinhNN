@@ -2,17 +2,21 @@
 import { Input, Select, Space } from "antd";
 import { SortAscendingOutlined } from "@ant-design/icons";
 import "../style/FilterBar.css";
+import { useLocation } from "react-router-dom";
 
 const { Option } = Select;
 
 export default function FilterBar() {
+  const location = useLocation();
+  const path = location.pathname.replace("/", "");
+
   return (
     <div
       style={{
         width: "100%",
         padding: "8px 0",
         display: "flex",
-        gap: 10,
+        gap: 15,
         justifyContent: "center",
         alignItems: "center",
       }}
@@ -20,13 +24,15 @@ export default function FilterBar() {
       <Space style={{ width: "auto" }} size={8}>
         {/* Search food */}
         <Input
-          placeholder="Search food"
-          style={{ width: "35vh", height: 34 }}
+          placeholder={
+            path === "Recipes" ? "Search recipes by name" : "Search food"
+          }
+          style={{ width: "40vh", height: 34 }}
         />
 
         {/* Sort by nutrient */}
         <Space>
-          <div style={{ border: "1px solid #ebebeb" }}>
+          <div style={{ border: "1px solid #ebebeb", borderRadius: 5 }}>
             <SortAscendingOutlined
               style={{
                 fontSize: 18,

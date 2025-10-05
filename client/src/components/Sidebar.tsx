@@ -9,9 +9,14 @@ import signOut from "../assets/sideBar/signOut.png";
 import logo from "../assets/logo.png";
 import miniLogo from "../assets/miniLogo.png";
 import { useAppSelector } from "../hooks/useCustomerRedux";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SideBar() {
   const sideBar = useAppSelector((state) => state.sidebar.isSidebarOpen);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const path = location.pathname.replace("/", "");
 
   return (
     <Sider
@@ -36,10 +41,9 @@ export default function SideBar() {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["1"]}
           items={[
             {
-              key: "1",
+              key: "Homepage",
               icon: (
                 <span className="sidebar-icon-circle">
                   <img
@@ -52,7 +56,7 @@ export default function SideBar() {
               label: "Homepage",
             },
             {
-              key: "2",
+              key: "Foods",
               icon: (
                 <span className="sidebar-icon-circle">
                   <img
@@ -65,7 +69,7 @@ export default function SideBar() {
               label: "Foods",
             },
             {
-              key: "3",
+              key: "Recipes",
               icon: (
                 <span className="sidebar-icon-circle">
                   <img
@@ -88,12 +92,21 @@ export default function SideBar() {
                   alignItems: "center",
                 }),
           }}
-          selectedKeys={["1"]}
+          selectedKeys={[
+            path === "" ? "Homepage" : path === "Foods" ? "Foods" : "Recipes",
+          ]}
           className="custom-sidebar-menu"
+          onClick={({ key }) => {
+            if (key === "Homepage") navigate("/");
+            else navigate(`/${key}`);
+          }}
         />
       </div>
 
-      <div className={`sidebar-signout ${sideBar ? "" : "collapsed"}`}>
+      <div
+        className={`sidebar-signout ${sideBar ? "" : "collapsed"}`}
+        onClick={() => navigate("/SignIn")}
+      >
         <img src={signOut} alt="signOut" className="sidebar-signout-icon" />
         {sideBar && <span className="sidebar-signout-text">Sign out</span>}
       </div>

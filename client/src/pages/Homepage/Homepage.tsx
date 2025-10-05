@@ -1,13 +1,21 @@
+import PrettyPagination from "../../components/PrettyPagination";
 import FilterBar from "../../components/FilterBar";
 import HeaderContent from "../../components/HeaderContent";
-import PrettyPagination from "../../components/PrettyPagination";
 import RecipeCard from "../../components/RecipeCard";
+import { useNavigate } from "react-router-dom";
 
 export default function Homepage() {
+  const navigate = useNavigate();
+
+  const handleRecipeDetail = (id: number) => {
+    navigate(`/Recipes/${id}`);
+  };
+
   return (
     <div style={{ position: "relative", minHeight: "100%" }}>
       <HeaderContent />
       <FilterBar />
+
       <div
         style={{
           marginTop: 20,
@@ -15,9 +23,11 @@ export default function Homepage() {
           gap: 24,
           justifyContent: "center",
           flexWrap: "wrap",
+          maxHeight: "55vh",
+          overflowY: "auto",
+          paddingRight: 16,
         }}
       >
-        {/* ...existing RecipeCard code... */}
         <RecipeCard
           image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpC7WN6oOGR7TG2mgB0xH-GIv84Hzl285APQ&s"
           title="Turmeric Roasted Cauliflower Salad (lowfodmap)"
@@ -31,6 +41,7 @@ export default function Homepage() {
             carb: "18 g",
             protein: "5 g",
           }}
+          openRecipeDetail={() => handleRecipeDetail(1)}
         />
         <RecipeCard
           image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpC7WN6oOGR7TG2mgB0xH-GIv84Hzl285APQ&s"
@@ -45,6 +56,7 @@ export default function Homepage() {
             carb: "18 g",
             protein: "5 g",
           }}
+          openRecipeDetail={() => handleRecipeDetail(1)}
         />
         <RecipeCard
           image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpC7WN6oOGR7TG2mgB0xH-GIv84Hzl285APQ&s"
@@ -59,6 +71,7 @@ export default function Homepage() {
             carb: "18 g",
             protein: "5 g",
           }}
+          openRecipeDetail={() => handleRecipeDetail(1)}
         />
         <RecipeCard
           image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpC7WN6oOGR7TG2mgB0xH-GIv84Hzl285APQ&s"
@@ -73,8 +86,10 @@ export default function Homepage() {
             carb: "18 g",
             protein: "5 g",
           }}
+          openRecipeDetail={() => handleRecipeDetail(1)}
         />
       </div>
+
       <div
         style={{
           position: "absolute",
@@ -82,7 +97,11 @@ export default function Homepage() {
           bottom: 0,
         }}
       >
-        <PrettyPagination />
+        <PrettyPagination
+          current={1}
+          total={500}
+          onChange={(page) => console.log("Page:", page)}
+        />
       </div>
     </div>
   );

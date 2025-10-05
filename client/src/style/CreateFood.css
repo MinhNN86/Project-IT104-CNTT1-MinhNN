@@ -1,0 +1,14 @@
+.createFood {
+  margin-top: 10px;
+  border: 1px solid #eeeeee;
+  padding: 15px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.createFood .textCreateFood {
+  font-size: 14px;
+  color: #888888;
+}

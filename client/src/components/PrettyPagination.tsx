@@ -1,12 +1,23 @@
 import { Pagination } from "antd";
 
-export default function PrettyPagination() {
+interface PrettyPaginationProps {
+  current?: number;
+  total?: number;
+  onChange?: (page: number, pageSize: number) => void;
+}
+
+export default function PrettyPagination({
+  current = 1,
+  total = 0,
+  onChange,
+}: PrettyPaginationProps) {
   return (
     <Pagination
-      defaultCurrent={6}
-      total={500}
+      current={current}
+      total={total}
       showLessItems
       showSizeChanger={false}
+      onChange={onChange}
     />
   );
 }
