@@ -49,4 +49,5 @@ export const {
   updateSearchValue,
   updateSortBy,
   updateSortType,
+  resetFilter,
 } = filterSlice.actions;

@@ -8,15 +8,19 @@ import recipesIcon from "../assets/sideBar/recipes.png";
 import signOut from "../assets/sideBar/signOut.png";
 import logo from "../assets/logo.png";
 import miniLogo from "../assets/miniLogo.png";
-import { useAppSelector } from "../hooks/useCustomerRedux";
+import { useAppDispatch, useAppSelector } from "../hooks/useCustomerRedux";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import useApp from "antd/es/app/useApp";
+import { resetFilter } from "../redux/slices/filterSlice";
 
 export default function SideBar() {
   const sideBar = useAppSelector((state) => state.sidebar.isSidebarOpen);
   const location = useLocation();
   const navigate = useNavigate();
   const path = location.pathname.replace("/", "");
+
+  const dispatch = useAppDispatch();
 
   return (
     <Sider
@@ -97,6 +101,7 @@ export default function SideBar() {
           ]}
           className="custom-sidebar-menu"
           onClick={({ key }) => {
+            dispatch(resetFilter());
             if (key === "Homepage") navigate("/");
             else navigate(`/${key}`);
           }}
