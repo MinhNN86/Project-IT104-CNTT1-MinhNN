@@ -1,6 +1,9 @@
 // RecipeCard.tsx
 import { Card, Tag, Button, Tooltip, Divider } from "antd";
-import { HeartOutlined, TeamOutlined } from "@ant-design/icons";
+import { HeartOutlined, HeartFilled, TeamOutlined } from "@ant-design/icons";
+import { useAppSelector } from "../hooks/useCustomerRedux";
+import { useState, useEffect } from "react";
+import type { User } from "../interface/user.interface";
 
 type Nutrients = {
   base: string;
@@ -11,6 +14,7 @@ type Nutrients = {
 };
 
 type Props = {
+  id: string;
   image: string;
   ribbonText?: string;
   title: string;
@@ -22,6 +26,7 @@ type Props = {
 };
 
 export default function RecipeCard({
+  id,
   image,
   ribbonText = "Community Recipes",
   title,
@@ -31,6 +36,18 @@ export default function RecipeCard({
   nutrients,
   openRecipeDetail,
 }: Props) {
+  const userLogin: User = useAppSelector((state) => state.userLogin.user);
+  // Kiểm tra recipe có mình có yêu thích hay không
+  const [isRecipeFavorite, setIsRecipeFavorite] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (userLogin.favorites && userLogin.favorites.includes(id)) {
+      setIsRecipeFavorite(true);
+    } else {
+      setIsRecipeFavorite(false);
+    }
+  }, [userLogin.favorites, id]);
+
   return (
     <Card
       variant="outlined"
@@ -63,7 +80,13 @@ export default function RecipeCard({
                 <Button
                   type="default"
                   className="h-[28] w-[60] rounded-xl border-gray-200"
-                  icon={<HeartOutlined />}
+                  icon={
+                    isRecipeFavorite ? (
+                      <HeartFilled style={{ color: "#CC5965" }} />
+                    ) : (
+                      <HeartOutlined />
+                    )
+                  }
                 >
                   <span className="ml-1 text-gray-500">{likes}</span>
                 </Button>

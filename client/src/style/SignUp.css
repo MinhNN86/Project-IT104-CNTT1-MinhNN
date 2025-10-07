@@ -115,3 +115,13 @@
   margin-top: 48px;
   opacity: 75%;
 }
+
+.ant-notification-notice-error {
+  background: #ffe5e8 !important;
+  color: #000000 !important;
+}
+
+.ant-notification-notice-success {
+  background: #e5fff0 !important;
+  color: #000000 !important;
+}
