@@ -6,7 +6,7 @@ export interface Recipe {
   author: string;
   totalTime: string;
   preparationTime: string;
-  finalWeight: string;
+  finalWeight: number;
   portions: number;
   likes: number;
   ingredients: string[];

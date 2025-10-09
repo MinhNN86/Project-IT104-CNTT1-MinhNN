@@ -8,6 +8,7 @@ import recipeSlice from "../slices/recipeSlice";
 import foodSlice from "../slices/foodSlice";
 import filterSlice from "../slices/filterSlice";
 import categoryRecipeSlice from "../slices/categoryRecipeSlice";
+import categoryFoodSlice from "../slices/categoryFoodSlice";
 
 export const store = configureStore({
   reducer: {
@@ -20,6 +21,7 @@ export const store = configureStore({
     food: foodSlice,
     filter: filterSlice,
     categoryRecipe: categoryRecipeSlice,
+    categoryFood: categoryFoodSlice,
   },
 });
 

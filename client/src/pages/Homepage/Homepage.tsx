@@ -13,8 +13,8 @@ import type { Recipe } from "../../interface/recipe.interface";
 import type { RecipeCategory } from "../../interface/recipeCategory.interface";
 
 export default function Homepage() {
-  const navigate = useNavigate();
   const userLogin: User = useAuthCheck();
+  const navigate = useNavigate();
 
   const recipeData = useAppSelector((state) => state.recipe);
   const foodData = useAppSelector((state) => state.food.data);
@@ -23,14 +23,10 @@ export default function Homepage() {
   );
   const dispatch = useAppDispatch();
 
-  console.log(userLogin);
-
   useEffect(() => {
     dispatch(getAllRecipe());
     dispatch(getAllFood());
   }, [dispatch]);
-
-  console.log(recipeData);
 
   const handleRecipeDetail = (id: number) => {
     navigate(`/Recipes/${id}`);

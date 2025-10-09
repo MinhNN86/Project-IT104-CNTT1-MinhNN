@@ -1,6 +1,11 @@
+import type { Recipe } from "../../../interface/recipe.interface";
 import "../../../style/RecipeDetail.css";
 
-export default function RecipeInfo() {
+type PropType = {
+  recipeDetail: Recipe;
+};
+
+export default function RecipeInfo({ recipeDetail }: PropType) {
   return (
     <div className="recipeInfo">
       <div className="recipeTitle">
@@ -13,7 +18,7 @@ export default function RecipeInfo() {
           <div className="infoValue">
             <input
               type="text"
-              defaultValue="Turmeric Roasted Cauliflower Salad (lowfodmap)"
+              defaultValue={recipeDetail.name}
               id="inputName"
               disabled
             />
@@ -22,9 +27,7 @@ export default function RecipeInfo() {
         <div className="infoRow">
           <div className="infoName description">Description</div>
           <div className="infoValue description">
-            Our roasted cauliflower salad with turmeric is low in calories and
-            packed with punchy flavor. Turmeric adds lovely color and flavor to
-            this easy vegan-friendly recipe
+            <div className="renderDescription">{recipeDetail.description}</div>
           </div>
         </div>
         <div className="infoRow">
@@ -32,7 +35,7 @@ export default function RecipeInfo() {
           <div className="infoValue">
             <input
               type="text"
-              defaultValue="Joana Jardim"
+              defaultValue={recipeDetail.author}
               id="inputAuthor"
               disabled
             />
@@ -43,7 +46,7 @@ export default function RecipeInfo() {
           <div className="infoValue">
             <input
               type="text"
-              defaultValue="00:40"
+              defaultValue={recipeDetail.totalTime}
               id="inputTotalTime"
               disabled
             />
@@ -54,7 +57,7 @@ export default function RecipeInfo() {
           <div className="infoValue">
             <input
               type="text"
-              defaultValue="00:40"
+              defaultValue={recipeDetail.preparationTime}
               id="inputPreparationTime"
               disabled
             />
@@ -65,7 +68,7 @@ export default function RecipeInfo() {
           <div className="infoValue">
             <input
               type="text"
-              defaultValue="978.8 grams"
+              defaultValue={`${recipeDetail.finalWeight} grams`}
               id="inputFinalWeight"
               disabled
             />
@@ -74,7 +77,12 @@ export default function RecipeInfo() {
         <div className="infoRow">
           <div className="infoName">Portions</div>
           <div className="infoValue">
-            <input type="text" defaultValue={4} id="inputPortions" disabled />
+            <input
+              type="text"
+              defaultValue={recipeDetail.portions}
+              id="inputPortions"
+              disabled
+            />
           </div>
         </div>
       </div>

@@ -89,7 +89,7 @@
 }
 
 .categoryRecipe {
-  width: 110px !important;
+  /* width: 110px !important; */
   display: flex;
   align-items: center;
   gap: 3px;
@@ -341,9 +341,6 @@
   background-color: #ffffff;
   padding: 8px 13px;
   color: #676a6c;
-}
-
-.newIngredient .searchIngredient input::placeholder {
 }
 
 .newIngredient .searchIngredient #searchFood {

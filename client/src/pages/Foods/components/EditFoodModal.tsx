@@ -52,11 +52,13 @@ const UnitInput = ({
   </Space.Compact>
 );
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { closeModalEditFood } from "../../../redux/slices/foods/modalEditFood";
+import { updateFood } from "../../../apis/food.api";
 
 export default function EditFoodModal() {
   const editData = useAppSelector((state) => state.editFood);
+  const userLogin = useAppSelector((state) => state.userLogin.user);
   const rawFood = (editData.editFood as Partial<Food>) || {};
   const dispatch = useAppDispatch();
 
@@ -115,6 +117,67 @@ export default function EditFoodModal() {
     },
   });
 
+  // Update formData when editData.editFood or modal open changes
+  useEffect(() => {
+    if (editData.isModalOpen && editData.editFood) {
+      const food = editData.editFood as Partial<Food>;
+      setFormData({
+        id: food.id,
+        name: food.name ?? "",
+        source: food.source ?? "My foods",
+        category: food.category ?? "",
+        quantity: food.quantity ?? "100",
+        macronutrients: {
+          energy: food.macronutrients?.energy ?? 0,
+          carbohydrate: food.macronutrients?.carbohydrate ?? 0,
+          fat: food.macronutrients?.fat ?? 0,
+          protein: food.macronutrients?.protein ?? 0,
+        },
+        micronutrients: {
+          cholesterol: food.micronutrients?.cholesterol ?? 0,
+          fiber: food.micronutrients?.fiber ?? 0,
+          sodium: food.micronutrients?.sodium ?? 0,
+          water: food.micronutrients?.water ?? 0,
+          vitaminA: food.micronutrients?.vitaminA ?? 0,
+          vitaminB6: food.micronutrients?.vitaminB6 ?? 0,
+          vitaminB12: food.micronutrients?.vitaminB12 ?? 0,
+          vitaminC: food.micronutrients?.vitaminC ?? 0,
+          vitaminD: food.micronutrients?.vitaminD ?? 0,
+          vitaminE: food.micronutrients?.vitaminE ?? 0,
+          vitaminK: food.micronutrients?.vitaminK ?? 0,
+          starch: food.micronutrients?.starch ?? 0,
+          lactose: food.micronutrients?.lactose ?? 0,
+          alcohol: food.micronutrients?.alcohol ?? 0,
+          caffeine: food.micronutrients?.caffeine ?? 0,
+          sugars: food.micronutrients?.sugars ?? 0,
+          calcium: food.micronutrients?.calcium ?? 0,
+          iron: food.micronutrients?.iron ?? 0,
+          magnesium: food.micronutrients?.magnesium ?? 0,
+          phosphorus: food.micronutrients?.phosphorus ?? 0,
+          potassium: food.micronutrients?.potassium ?? 0,
+          zinc: food.micronutrients?.zinc ?? 0,
+          copper: food.micronutrients?.copper ?? 0,
+          fluoride: food.micronutrients?.fluoride ?? 0,
+          manganese: food.micronutrients?.manganese ?? 0,
+          selenium: food.micronutrients?.selenium ?? 0,
+          thiamin: food.micronutrients?.thiamin ?? 0,
+          riboflavin: food.micronutrients?.riboflavin ?? 0,
+          niacin: food.micronutrients?.niacin ?? 0,
+          pantothenicAcid: food.micronutrients?.pantothenicAcid ?? 0,
+          folateTotal: food.micronutrients?.folateTotal ?? 0,
+          folicAcid: food.micronutrients?.folicAcid ?? 0,
+          fattyAcidsTrans: food.micronutrients?.fattyAcidsTrans ?? 0,
+          fattyAcidsSaturated: food.micronutrients?.fattyAcidsSaturated ?? 0,
+          fattyAcidsMonounsaturated:
+            food.micronutrients?.fattyAcidsMonounsaturated ?? 0,
+          fattyAcidsPolyunsaturated:
+            food.micronutrients?.fattyAcidsPolyunsaturated ?? 0,
+          chloride: food.micronutrients?.chloride ?? 0,
+        },
+      });
+    }
+  }, [editData.editFood, editData.isModalOpen]);
+
   const handleChange = <K extends keyof Food>(field: K, value: Food[K]) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
@@ -141,6 +204,12 @@ export default function EditFoodModal() {
 
   const handleCloseModal = () => {
     dispatch(closeModalEditFood());
+  };
+
+  const handleSubmit = () => {
+    console.log("EditFoodModal submit:", formData);
+    dispatch(updateFood(formData));
+    handleCloseModal();
   };
 
   return (
@@ -573,7 +642,12 @@ export default function EditFoodModal() {
             {/* Footer buttons */}
             <div className="flex justify-end gap-3 mt-6">
               <Button onClick={handleCloseModal}>Cancel</Button>
-              <Button type="primary" className="!bg-emerald-500">
+              <Button
+                type="primary"
+                className="!bg-emerald-500"
+                onClick={handleSubmit}
+                disabled={formData.source !== userLogin?.username}
+              >
                 Save and close
               </Button>
             </div>

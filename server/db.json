@@ -2,9 +2,9 @@
   "users": [
     {
       "id": "1",
-      "email": "demo@gmail.com",
-      "username": "Demo",
-      "password": "123",
+      "email": "dev@gmail.com",
+      "username": "Developer",
+      "password": "1",
       "favorites": ["1", "2"]
     },
     {
@@ -24,14 +24,20 @@
       "author": "Joana Jardim",
       "totalTime": "00:40",
       "preparationTime": "00:40",
-      "finalWeight": "978.8 grams",
+      "finalWeight": 978.8,
       "portions": 4,
       "likes": 134,
       "ingredients": ["1", "2", "3"],
       "cookingMethods": "STEP 1 Heat the oven to 200C/fan 180C/gas 6. Put the cauliflower in an ovenproof dish or tin.",
       "category": [
-        { "id": "1", "name": "vegetarian" },
-        { "id": "2", "name": "appetizer" }
+        {
+          "id": "1",
+          "name": "vegetarian"
+        },
+        {
+          "id": "2",
+          "name": "appetizer"
+        }
       ]
     },
     {
@@ -42,14 +48,20 @@
       "author": "Carlos Mendes",
       "totalTime": "00:30",
       "preparationTime": "00:15",
-      "finalWeight": "850 grams",
+      "finalWeight": 850,
       "portions": 3,
       "likes": 198,
       "ingredients": ["4", "5", "6", "1"],
       "cookingMethods": "STEP 1 Mix lemon juice, olive oil, and herbs. Marinate chicken for 15 minutes then grill until cooked.",
       "category": [
-        { "id": "3", "name": "grilled" },
-        { "id": "4", "name": "main course" }
+        {
+          "id": "3",
+          "name": "grilled"
+        },
+        {
+          "id": "4",
+          "name": "main course"
+        }
       ]
     },
     {
@@ -60,14 +72,20 @@
       "author": "Lena Hart",
       "totalTime": "00:50",
       "preparationTime": "00:20",
-      "finalWeight": "1100 grams",
+      "finalWeight": 1100,
       "portions": 4,
       "likes": 165,
       "ingredients": ["2", "3", "7"],
       "cookingMethods": "STEP 1 Roast the pumpkin at 180C until soft. Blend with cream and season to taste.",
       "category": [
-        { "id": "5", "name": "soup" },
-        { "id": "6", "name": "vegetarian" }
+        {
+          "id": "5",
+          "name": "soup"
+        },
+        {
+          "id": "6",
+          "name": "vegetarian"
+        }
       ]
     },
     {
@@ -78,14 +96,20 @@
       "author": "Marco Rossi",
       "totalTime": "00:20",
       "preparationTime": "00:10",
-      "finalWeight": "600 grams",
+      "finalWeight": 600,
       "portions": 2,
       "likes": 243,
       "ingredients": ["1", "4", "5"],
       "cookingMethods": "STEP 1 Cook spaghetti. Sauté garlic in olive oil and toss with pasta.",
       "category": [
-        { "id": "7", "name": "pasta" },
-        { "id": "1", "name": "vegetarian" }
+        {
+          "id": "7",
+          "name": "pasta"
+        },
+        {
+          "id": "1",
+          "name": "vegetarian"
+        }
       ]
     },
     {
@@ -96,14 +120,20 @@
       "author": "Ayesha Noor",
       "totalTime": "00:45",
       "preparationTime": "00:20",
-      "finalWeight": "900 grams",
+      "finalWeight": 900,
       "portions": 3,
       "likes": 120,
       "ingredients": ["6", "7", "2", "3"],
       "cookingMethods": "STEP 1 Sauté onions and garlic, add chickpeas and spinach, and simmer until flavors blend.",
       "category": [
-        { "id": "8", "name": "stew" },
-        { "id": "1", "name": "vegetarian" }
+        {
+          "id": "8",
+          "name": "stew"
+        },
+        {
+          "id": "1",
+          "name": "vegetarian"
+        }
       ]
     },
     {
@@ -114,14 +144,20 @@
       "author": "Minh Tran",
       "totalTime": "00:25",
       "preparationTime": "00:15",
-      "finalWeight": "750 grams",
+      "finalWeight": 750,
       "portions": 2,
       "likes": 177,
       "ingredients": ["4", "1", "5"],
       "cookingMethods": "STEP 1 Fry tofu until golden. Add vegetables and stir-fry with sauce for 5 minutes.",
       "category": [
-        { "id": "9", "name": "stir-fry" },
-        { "id": "1", "name": "vegetarian" }
+        {
+          "id": "9",
+          "name": "stir-fry"
+        },
+        {
+          "id": "1",
+          "name": "vegetarian"
+        }
       ]
     },
     {
@@ -132,14 +168,20 @@
       "author": "Elena Petrova",
       "totalTime": "00:35",
       "preparationTime": "00:10",
-      "finalWeight": "500 grams",
+      "finalWeight": 500,
       "portions": 2,
       "likes": 210,
       "ingredients": ["6", "2", "3"],
       "cookingMethods": "STEP 1 Preheat oven. Place salmon in foil with lemon and dill. Bake for 20 minutes.",
       "category": [
-        { "id": "10", "name": "seafood" },
-        { "id": "4", "name": "main course" }
+        {
+          "id": "10",
+          "name": "seafood"
+        },
+        {
+          "id": "4",
+          "name": "main course"
+        }
       ]
     },
     {
@@ -150,14 +192,20 @@
       "author": "Sarah Kim",
       "totalTime": "00:15",
       "preparationTime": "00:10",
-      "finalWeight": "300 grams",
+      "finalWeight": 300,
       "portions": 1,
       "likes": 156,
       "ingredients": ["7", "1", "4"],
       "cookingMethods": "STEP 1 Toast bread, mash avocado, and top with a poached egg.",
       "category": [
-        { "id": "11", "name": "breakfast" },
-        { "id": "1", "name": "vegetarian" }
+        {
+          "id": "11",
+          "name": "breakfast"
+        },
+        {
+          "id": "1",
+          "name": "vegetarian"
+        }
       ]
     },
     {
@@ -168,14 +216,20 @@
       "author": "James Lee",
       "totalTime": "01:00",
       "preparationTime": "00:25",
-      "finalWeight": "1000 grams",
+      "finalWeight": 1000,
       "portions": 4,
       "likes": 188,
       "ingredients": ["5", "6", "2", "3"],
       "cookingMethods": "STEP 1 Hollow bell peppers, fill with mix, and bake at 180C for 30-35 minutes.",
       "category": [
-        { "id": "12", "name": "baked" },
-        { "id": "1", "name": "vegetarian" }
+        {
+          "id": "12",
+          "name": "baked"
+        },
+        {
+          "id": "1",
+          "name": "vegetarian"
+        }
       ]
     },
     {
@@ -186,14 +240,20 @@
       "author": "Maria Papadopoulos",
       "totalTime": "00:25",
       "preparationTime": "00:20",
-      "finalWeight": "680 grams",
+      "finalWeight": 680,
       "portions": 3,
       "likes": 142,
       "ingredients": ["4", "7", "1"],
       "cookingMethods": "STEP 1 Cook quinoa, let cool, and mix with feta, olives, and dressing.",
       "category": [
-        { "id": "13", "name": "salad" },
-        { "id": "1", "name": "vegetarian" }
+        {
+          "id": "13",
+          "name": "salad"
+        },
+        {
+          "id": "1",
+          "name": "vegetarian"
+        }
       ]
     }
   ],
@@ -202,7 +262,7 @@
       "id": "1",
       "name": "Ackee, canned, drained",
       "source": "Minh Cuong Tran",
-      "category": "Vegetables and Vegetable Products",
+      "category": "Vegetables",
       "quantity": "100g",
       "macronutrients": {
         "energy": 151,
@@ -254,7 +314,7 @@
       "id": "2",
       "name": "Broccoli, raw",
       "source": "USDA",
-      "category": "Vegetables and Vegetable Products",
+      "category": "Vegetables",
       "quantity": "100",
       "macronutrients": {
         "energy": 34,
@@ -263,50 +323,50 @@
         "protein": 2.8
       },
       "micronutrients": {
-        "cholesterol": 0.0,
+        "cholesterol": 0,
         "fiber": 2.6,
-        "sodium": 33.0,
+        "sodium": 33,
         "water": 89.3,
-        "vitaminA": 31.0,
+        "vitaminA": 31,
         "vitaminB6": 0.21,
-        "vitaminB12": 0.0,
+        "vitaminB12": 0,
         "vitaminC": 89.2,
-        "vitaminD": 0.0,
+        "vitaminD": 0,
         "vitaminE": 0.78,
         "vitaminK": 101.6,
-        "starch": 0.0,
-        "lactose": 0.0,
-        "alcohol": 0.0,
-        "caffeine": 0.0,
+        "starch": 0,
+        "lactose": 0,
+        "alcohol": 0,
+        "caffeine": 0,
         "sugars": 1.7,
-        "calcium": 47.0,
+        "calcium": 47,
         "iron": 0.73,
-        "magnesium": 21.0,
-        "phosphorus": 66.0,
-        "potassium": 316.0,
+        "magnesium": 21,
+        "phosphorus": 66,
+        "potassium": 316,
         "zinc": 0.41,
         "copper": 0.05,
-        "fluoride": "",
+        "fluoride": 0,
         "manganese": 0.21,
         "selenium": 2.5,
         "thiamin": 0.071,
         "riboflavin": 0.117,
         "niacin": 0.639,
         "pantothenicAcid": 0.573,
-        "folateTotal": 63.0,
-        "folicAcid": "",
-        "fattyAcidsTrans": 0.0,
+        "folateTotal": 63,
+        "folicAcid": 0,
+        "fattyAcidsTrans": 0,
         "fattyAcidsSaturated": 0.04,
         "fattyAcidsMonounsaturated": 0.01,
         "fattyAcidsPolyunsaturated": 0.04,
-        "chloride": ""
+        "chloride": 0
       }
     },
     {
       "id": "3",
       "name": "Apple, raw, with skin",
       "source": "USDA",
-      "category": "Fruits and Fruit Juices",
+      "category": "Fruits",
       "quantity": "100",
       "macronutrients": {
         "energy": 52,
@@ -315,154 +375,154 @@
         "protein": 0.3
       },
       "micronutrients": {
-        "cholesterol": 0.0,
+        "cholesterol": 0,
         "fiber": 2.4,
-        "sodium": 1.0,
+        "sodium": 1,
         "water": 85.6,
-        "vitaminA": 3.0,
+        "vitaminA": 3,
         "vitaminB6": 0.041,
-        "vitaminB12": 0.0,
+        "vitaminB12": 0,
         "vitaminC": 4.6,
-        "vitaminD": 0.0,
+        "vitaminD": 0,
         "vitaminE": 0.18,
         "vitaminK": 2.2,
-        "starch": 0.0,
-        "lactose": 0.0,
-        "alcohol": 0.0,
-        "caffeine": 0.0,
+        "starch": 0,
+        "lactose": 0,
+        "alcohol": 0,
+        "caffeine": 0,
         "sugars": 10.4,
-        "calcium": 6.0,
+        "calcium": 6,
         "iron": 0.12,
-        "magnesium": 5.0,
-        "phosphorus": 11.0,
-        "potassium": 107.0,
+        "magnesium": 5,
+        "phosphorus": 11,
+        "potassium": 107,
         "zinc": 0.04,
         "copper": 0.027,
         "fluoride": 3.3,
         "manganese": 0.035,
-        "selenium": 0.0,
+        "selenium": 0,
         "thiamin": 0.017,
         "riboflavin": 0.026,
         "niacin": 0.091,
         "pantothenicAcid": 0.061,
-        "folateTotal": 3.0,
-        "folicAcid": "",
-        "fattyAcidsTrans": 0.0,
+        "folateTotal": 3,
+        "folicAcid": 0,
+        "fattyAcidsTrans": 0,
         "fattyAcidsSaturated": 0.03,
         "fattyAcidsMonounsaturated": 0.01,
         "fattyAcidsPolyunsaturated": 0.05,
-        "chloride": ""
+        "chloride": 0
       }
     },
     {
       "id": "4",
       "name": "Chicken breast, roasted",
       "source": "USDA",
-      "category": "Poultry Products",
+      "category": "Poultry",
       "quantity": "100",
       "macronutrients": {
         "energy": 165,
-        "carbohydrate": 0.0,
+        "carbohydrate": 0,
         "fat": 3.6,
-        "protein": 31.0
+        "protein": 31
       },
       "micronutrients": {
-        "cholesterol": 85.0,
-        "fiber": 0.0,
-        "sodium": 74.0,
+        "cholesterol": 85,
+        "fiber": 0,
+        "sodium": 74,
         "water": 65.3,
-        "vitaminA": 13.0,
+        "vitaminA": 13,
         "vitaminB6": 0.6,
         "vitaminB12": 0.3,
-        "vitaminC": 0.0,
+        "vitaminC": 0,
         "vitaminD": 0.1,
         "vitaminE": 0.27,
-        "vitaminK": 0.0,
-        "starch": 0.0,
-        "lactose": 0.0,
-        "alcohol": 0.0,
-        "caffeine": 0.0,
-        "sugars": 0.0,
-        "calcium": 15.0,
-        "iron": 1.0,
-        "magnesium": 29.0,
-        "phosphorus": 220.0,
-        "potassium": 256.0,
-        "zinc": 1.0,
+        "vitaminK": 0,
+        "starch": 0,
+        "lactose": 0,
+        "alcohol": 0,
+        "caffeine": 0,
+        "sugars": 0,
+        "calcium": 15,
+        "iron": 1,
+        "magnesium": 29,
+        "phosphorus": 220,
+        "potassium": 256,
+        "zinc": 1,
         "copper": 0.03,
-        "fluoride": "",
+        "fluoride": 0,
         "manganese": 0.02,
         "selenium": 27.6,
         "thiamin": 0.07,
         "riboflavin": 0.1,
         "niacin": 13.7,
         "pantothenicAcid": 1.1,
-        "folateTotal": 4.0,
-        "folicAcid": "",
-        "fattyAcidsTrans": 0.0,
-        "fattyAcidsSaturated": 1.0,
+        "folateTotal": 4,
+        "folicAcid": 0,
+        "fattyAcidsTrans": 0,
+        "fattyAcidsSaturated": 1,
         "fattyAcidsMonounsaturated": 1.2,
         "fattyAcidsPolyunsaturated": 0.8,
-        "chloride": ""
+        "chloride": 0
       }
     },
     {
       "id": "5",
       "name": "Brown rice, cooked",
       "source": "USDA",
-      "category": "Cereal Grains and Pasta",
+      "category": "Grains",
       "quantity": "100",
       "macronutrients": {
         "energy": 123,
         "carbohydrate": 25.6,
-        "fat": 1.0,
+        "fat": 1,
         "protein": 2.7
       },
       "micronutrients": {
-        "cholesterol": 0.0,
+        "cholesterol": 0,
         "fiber": 1.6,
-        "sodium": 4.0,
-        "water": 70.0,
-        "vitaminA": 0.0,
+        "sodium": 4,
+        "water": 70,
+        "vitaminA": 0,
         "vitaminB6": 0.15,
-        "vitaminB12": 0.0,
-        "vitaminC": 0.0,
-        "vitaminD": 0.0,
+        "vitaminB12": 0,
+        "vitaminC": 0,
+        "vitaminD": 0,
         "vitaminE": 0.11,
         "vitaminK": 0.6,
         "starch": 23.5,
-        "lactose": 0.0,
-        "alcohol": 0.0,
-        "caffeine": 0.0,
+        "lactose": 0,
+        "alcohol": 0,
+        "caffeine": 0,
         "sugars": 0.2,
-        "calcium": 10.0,
+        "calcium": 10,
         "iron": 0.56,
-        "magnesium": 39.0,
-        "phosphorus": 103.0,
-        "potassium": 86.0,
+        "magnesium": 39,
+        "phosphorus": 103,
+        "potassium": 86,
         "zinc": 0.99,
         "copper": 0.11,
-        "fluoride": "",
+        "fluoride": 0,
         "manganese": 1.09,
         "selenium": 9.8,
         "thiamin": 0.17,
         "riboflavin": 0.02,
         "niacin": 1.6,
         "pantothenicAcid": 0.29,
-        "folateTotal": 9.0,
-        "folicAcid": "",
-        "fattyAcidsTrans": 0.0,
+        "folateTotal": 9,
+        "folicAcid": 0,
+        "fattyAcidsTrans": 0,
         "fattyAcidsSaturated": 0.26,
         "fattyAcidsMonounsaturated": 0.33,
         "fattyAcidsPolyunsaturated": 0.36,
-        "chloride": ""
+        "chloride": 0
       }
     },
     {
       "id": "6",
       "name": "Whole milk, 3.25% fat",
       "source": "USDA",
-      "category": "Dairy and Egg Products",
+      "category": "Dairy",
       "quantity": "100",
       "macronutrients": {
         "energy": 61,
@@ -471,43 +531,95 @@
         "protein": 3.2
       },
       "micronutrients": {
-        "cholesterol": 10.0,
-        "fiber": 0.0,
-        "sodium": 43.0,
+        "cholesterol": 10,
+        "fiber": 0,
+        "sodium": 43,
         "water": 88.3,
-        "vitaminA": 46.0,
+        "vitaminA": 46,
         "vitaminB6": 0.04,
         "vitaminB12": 0.45,
-        "vitaminC": 0.0,
-        "vitaminD": 1.0,
+        "vitaminC": 0,
+        "vitaminD": 1,
         "vitaminE": 0.07,
         "vitaminK": 0.3,
-        "starch": 0.0,
+        "starch": 0,
         "lactose": 5.1,
-        "alcohol": 0.0,
-        "caffeine": 0.0,
+        "alcohol": 0,
+        "caffeine": 0,
         "sugars": 5.1,
-        "calcium": 113.0,
+        "calcium": 113,
         "iron": 0.03,
-        "magnesium": 10.0,
-        "phosphorus": 84.0,
-        "potassium": 132.0,
+        "magnesium": 10,
+        "phosphorus": 84,
+        "potassium": 132,
         "zinc": 0.37,
         "copper": 0.01,
-        "fluoride": "",
-        "manganese": "",
+        "fluoride": 0,
+        "manganese": 0,
         "selenium": 1.5,
         "thiamin": 0.03,
         "riboflavin": 0.18,
         "niacin": 0.1,
         "pantothenicAcid": 0.34,
-        "folateTotal": 5.0,
-        "folicAcid": "",
+        "folateTotal": 5,
+        "folicAcid": 0,
         "fattyAcidsTrans": 0.12,
         "fattyAcidsSaturated": 1.86,
         "fattyAcidsMonounsaturated": 0.82,
         "fattyAcidsPolyunsaturated": 0.2,
-        "chloride": ""
+        "chloride": 0
+      }
+    },
+    {
+      "id": "57KFTfg",
+      "name": "Test",
+      "source": "Developer",
+      "category": "Vegetables",
+      "quantity": "100",
+      "macronutrients": {
+        "energy": 0,
+        "carbohydrate": 0,
+        "fat": 0,
+        "protein": 0
+      },
+      "micronutrients": {
+        "cholesterol": 0,
+        "fiber": 0,
+        "sodium": 0,
+        "water": 0,
+        "vitaminA": 0,
+        "vitaminB6": 0,
+        "vitaminB12": 0,
+        "vitaminC": 0,
+        "vitaminD": 0,
+        "vitaminE": 0,
+        "vitaminK": 0,
+        "starch": 0,
+        "lactose": 0,
+        "alcohol": 0,
+        "caffeine": 0,
+        "sugars": 0,
+        "calcium": 0,
+        "iron": 0,
+        "magnesium": 0,
+        "phosphorus": 0,
+        "potassium": 0,
+        "zinc": 0,
+        "copper": 0,
+        "fluoride": 0,
+        "manganese": 0,
+        "selenium": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "pantothenicAcid": 0,
+        "folateTotal": 0,
+        "folicAcid": 0,
+        "fattyAcidsTrans": 0,
+        "fattyAcidsSaturated": 0,
+        "fattyAcidsMonounsaturated": 0,
+        "fattyAcidsPolyunsaturated": 0,
+        "chloride": 123
       }
     }
   ],
@@ -551,6 +663,80 @@
     {
       "id": "10",
       "name": "soup"
+    }
+  ],
+  "foodCategory": [
+    {
+      "id": "1",
+      "name": "Vegetables"
+    },
+    {
+      "id": "2",
+      "name": "Fruits"
+    },
+    {
+      "id": "3",
+      "name": "Grains"
+    },
+    {
+      "id": "4",
+      "name": "Dairy"
+    },
+    {
+      "id": "5",
+      "name": "Poultry"
+    },
+    {
+      "id": "6",
+      "name": "Beef"
+    },
+    {
+      "id": "7",
+      "name": "Pork"
+    },
+    {
+      "id": "8",
+      "name": "Seafood"
+    },
+    {
+      "id": "9",
+      "name": "Legumes & Nuts"
+    },
+    {
+      "id": "10",
+      "name": "Oils"
+    },
+    {
+      "id": "11",
+      "name": "Drinks"
+    },
+    {
+      "id": "12",
+      "name": "Alcohol"
+    },
+    {
+      "id": "13",
+      "name": "Snacks"
+    },
+    {
+      "id": "14",
+      "name": "Sauces & Soups"
+    },
+    {
+      "id": "15",
+      "name": "Baby Foods"
+    },
+    {
+      "id": "16",
+      "name": "Fast Foods"
+    },
+    {
+      "id": "17",
+      "name": "Spices"
+    },
+    {
+      "id": "18",
+      "name": "Others"
     }
   ]
 }

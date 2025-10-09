@@ -15,6 +15,7 @@ import {
 } from "../redux/slices/filterSlice";
 import { useEffect } from "react";
 import { getAllCategoryRecipe } from "../apis/categoryRecipe.api";
+import { getAllCategoryFood } from "../apis/categoryFood.api";
 
 const { Option } = Select;
 
@@ -24,15 +25,18 @@ export default function FilterBar() {
   const dispatch = useAppDispatch();
 
   const categoryRecipe = useAppSelector((state) => state.categoryRecipe.data);
+  const categoryFood = useAppSelector((state) => state.categoryFood);
   const { searchValue, sortType, sortBy, category } = useAppSelector(
     (state) => state.filter
   );
 
   useEffect(() => {
-    dispatch(getAllCategoryRecipe());
-  }, [dispatch]);
-
-  console.log(categoryRecipe);
+    if (path === "Foods") {
+      dispatch(getAllCategoryFood());
+    } else {
+      dispatch(getAllCategoryRecipe());
+    }
+  }, [dispatch, path]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -120,11 +124,18 @@ export default function FilterBar() {
           placeholder="All categories"
         >
           <Option value="">All categories</Option>
-          {categoryRecipe.map((category) => (
-            <Option value={category.name} key={category.id}>
-              {category.name}
-            </Option>
-          ))}
+          {path === "Foods"
+            ? categoryFood.data &&
+              categoryFood.data.map((category) => (
+                <Option value={category.name} key={category.id}>
+                  {category.name}
+                </Option>
+              ))
+            : categoryRecipe.map((category) => (
+                <Option value={category.name} key={category.id}>
+                  {category.name}
+                </Option>
+              ))}
         </Select>
       </Space>
     </div>

@@ -3,8 +3,12 @@ import { Header } from "antd/es/layout/layout";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { closeSidebar, openSidebar } from "../redux/slices/sidebarSlices";
 import { useAppDispatch, useAppSelector } from "../hooks/useCustomerRedux";
+import { useAuthCheck } from "../hooks/useAuthCheck";
+import type { User } from "../interface/user.interface";
 
 export default function HeaderLayout() {
+  const userLogin: User = useAuthCheck();
+
   const sizeBar = useAppSelector((state) => state.sidebar.isSidebarOpen);
   const dispatch = useAppDispatch();
 
@@ -15,6 +19,7 @@ export default function HeaderLayout() {
       dispatch(openSidebar());
     }
   };
+
   return (
     <Header style={{ padding: 0, background: "#FFFFFF" }}>
       <div className="flex justify-between items-center">
@@ -33,7 +38,7 @@ export default function HeaderLayout() {
           }}
         />
 
-        <div className="mr-5">MinhNN</div>
+        <div className="mr-5">{userLogin.username}</div>
       </div>
     </Header>
   );

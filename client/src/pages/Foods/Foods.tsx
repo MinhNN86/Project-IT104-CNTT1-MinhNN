@@ -1,40 +1,91 @@
+import { useEffect, useState } from "react";
+import { getAllFood } from "../../apis/food.api";
 import FilterBar from "../../components/FilterBar";
 import HeaderContent from "../../components/HeaderContent";
 import PrettyPagination from "../../components/PrettyPagination";
-import { useAppDispatch } from "../../hooks/useCustomerRedux";
+import { useAppDispatch, useAppSelector } from "../../hooks/useCustomerRedux";
 import { openModalAdd } from "../../redux/slices/foods/modalAddFood";
 import { openModalEditFood } from "../../redux/slices/foods/modalEditFood";
 import AddFoodModal from "./components/AddFoodModal";
 import CreateFood from "./components/CreateFood";
 import EditFoodModal from "./components/EditFoodModal";
 import FoodRow from "./components/FoodRow";
+import { useAuthCheck } from "../../hooks/useAuthCheck";
 
 export default function Foods() {
+  useAuthCheck();
+  const foodData = useAppSelector((state) => state.food.data);
+  const { searchValue, sortBy, category, sortType } = useAppSelector(
+    (state) => state.filter
+  );
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getAllFood());
+  }, [dispatch]);
+
+  // Lọc food theo filter
+  const filteredFood = () => {
+    let filtered = [...foodData];
+
+    // Lọc theo searchValue
+    if (searchValue) {
+      filtered = filtered.filter((food) =>
+        food.name.toLowerCase().includes(searchValue.toLowerCase())
+      );
+    }
+
+    // Lọc theo category
+    if (category) {
+      filtered = filtered.filter((food) => food.category === category);
+    }
+
+    // Sắp xếp theo sortBy và sortType
+    if (sortBy) {
+      type NutrientKey = "energy" | "fat" | "carbohydrate" | "protein";
+      filtered = filtered.sort((a, b) => {
+        const getValue = (food: typeof a, key: NutrientKey) => {
+          return food.macronutrients[key] ?? 0;
+        };
+        return sortType === "az"
+          ? getValue(a, sortBy as NutrientKey) -
+              getValue(b, sortBy as NutrientKey)
+          : getValue(b, sortBy as NutrientKey) -
+              getValue(a, sortBy as NutrientKey);
+      });
+    }
+
+    return filtered;
+  };
+
+  // Phân trang
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 10;
+
+  const filtered = filteredFood();
+  const pagedFood = filtered.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
+
   return (
     <div style={{ position: "relative", minHeight: "100%" }}>
       <HeaderContent />
       <FilterBar />
-      <div className="mt-[16px] flex flex-col gap-[10px]">
-        <FoodRow
-          name="Ackee, canned, drained"
-          source="McCance and Widdowson's"
-          energy="100 kcal"
-          fat="5 g"
-          protein="10 g"
-          carb="15 g"
-          onClick={() => dispatch(openModalEditFood())}
-        />
 
-        <FoodRow
-          name="Ackee, canned, drained"
-          source="McCance and Widdowson's"
-          energy="100 kcal"
-          fat="5 g"
-          protein="10 g"
-          carb="15 g"
-          onClick={() => dispatch(openModalEditFood())}
-        />
+      <div className="mt-[16px] flex flex-col gap-[10px]">
+        {pagedFood.map((food) => (
+          <FoodRow
+            key={food.id}
+            name={food.name}
+            source={food.source}
+            energy={`${food.macronutrients.energy ?? 0} kcal`}
+            fat={`${food.macronutrients.fat ?? 0} g`}
+            protein={`${food.macronutrients.protein ?? 0} g`}
+            carb={`${food.macronutrients.carbohydrate ?? 0} g`}
+            onClick={() => dispatch(openModalEditFood(food))}
+          />
+        ))}
 
         <CreateFood onClick={() => dispatch(openModalAdd())} />
       </div>
@@ -58,9 +109,10 @@ export default function Foods() {
           }}
         >
           <PrettyPagination
-            current={1}
-            total={500}
-            onChange={(page) => console.log("Page:", page)}
+            current={currentPage}
+            total={filtered.length}
+            pageSize={pageSize}
+            onChange={(page) => setCurrentPage(page)}
           />
         </div>
       </div>

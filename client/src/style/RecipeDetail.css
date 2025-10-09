@@ -68,7 +68,7 @@
 }
 
 .categoryRecipe {
-  width: 123px !important;
+  /* width: 100% !important; */
   display: flex;
   align-items: center;
   gap: 3px;
@@ -164,15 +164,20 @@
 }
 
 .recipeInfo .infoRow .infoName.description {
-  height: 61px;
+  height: 58px;
 }
 
 .recipeInfo .infoRow .infoValue.description {
+  padding-left: 0px;
+}
+
+.recipeInfo .infoRow .infoValue.description .renderDescription {
+  height: 58px;
   width: 645px;
   padding-left: 10px;
   display: flex;
   align-items: center;
-  color: rgb(103, 106, 108);
+  color: #676a6c;
   border-width: 1px;
   border-style: solid;
   border-color: rgb(238, 238, 238) rgb(238, 238, 238) rgb(238, 238, 238)
@@ -360,6 +365,10 @@
 
 .globalCircle .globalItem .blue {
   border: 6px solid rgb(106, 125, 147);
+}
+
+.globalCircle .globalItem .empty {
+  border: 6px solid #717171 !important;
 }
 
 .globalCircle .circleValue {

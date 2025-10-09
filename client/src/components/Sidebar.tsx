@@ -11,7 +11,6 @@ import miniLogo from "../assets/miniLogo.png";
 import { useAppDispatch, useAppSelector } from "../hooks/useCustomerRedux";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import useApp from "antd/es/app/useApp";
 import { resetFilter } from "../redux/slices/filterSlice";
 
 export default function SideBar() {
