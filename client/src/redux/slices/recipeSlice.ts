@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { Recipe } from "../../interface/recipe.interface";
-import { getAllRecipe } from "../../apis/recipe.api";
+import { addRecipe, getAllRecipe } from "../../apis/recipe.api";
 
 type RecipeInitial = {
   status: "idle" | "pending" | "success" | "failed";
@@ -19,10 +19,14 @@ const recipeSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(getAllRecipe.fulfilled, (state, action) => {
-      state.status = "success";
-      state.data = action.payload;
-    });
+    builder
+      .addCase(getAllRecipe.fulfilled, (state, action) => {
+        state.status = "success";
+        state.data = action.payload;
+      })
+      .addCase(addRecipe.fulfilled, (state, action) => {
+        state.data.push(action.payload);
+      });
   },
 });
 

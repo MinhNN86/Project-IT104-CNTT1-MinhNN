@@ -139,21 +139,23 @@ export default function Recipes() {
           paddingRight: 16,
         }}
       >
-        {pagedRecipe.map((recipe: Recipe) => (
-          <RecipeCard
-            key={recipe.id}
-            id={recipe.id}
-            image={recipe.coverSrc}
-            title={recipe.name}
-            author={recipe.author}
-            category={recipe.category
-              .map((cat: RecipeCategory) => cat.name)
-              .join(", ")}
-            likes={recipe.likes}
-            nutrients={calculateNutrients(recipe.ingredients)}
-            openRecipeDetail={() => handleRecipeDetail(recipe.id)}
-          />
-        ))}
+        {pagedRecipe
+          .filter((recipe: Recipe) => recipe.id)
+          .map((recipe: Recipe) => (
+            <RecipeCard
+              key={recipe.id}
+              id={recipe.id!}
+              image={recipe.coverSrc}
+              title={recipe.name}
+              author={recipe.author}
+              category={recipe.category
+                .map((cat: RecipeCategory) => cat.name)
+                .join(", ")}
+              likes={recipe.likes}
+              nutrients={calculateNutrients(recipe.ingredients)}
+              openRecipeDetail={() => handleRecipeDetail(recipe.id!)}
+            />
+          ))}
       </div>
 
       <div

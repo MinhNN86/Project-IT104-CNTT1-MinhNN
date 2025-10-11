@@ -100,7 +100,7 @@
   cursor: pointer;
 }
 
-.categoryRecipe div {
+.categoryRecipe select {
   margin-left: 5px;
   font-size: 12px;
   color: rgb(103, 106, 108);
@@ -223,8 +223,6 @@
   display: flex;
   align-items: center;
   color: #676a6c;
-  border: none;
-  border-left: 1px solid #ffffff;
 }
 
 .recipeInfo .infoRow .iconEdit.description {
@@ -366,6 +364,14 @@
   align-items: center;
   border: 1px solid #eeeeee;
   cursor: pointer;
+}
+
+.newIngredient .searchIngredient #searchCategory {
+  width: 200px;
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  padding: 8px 13px;
+  color: #676a6c;
 }
 
 .foodInfo {
@@ -511,10 +517,6 @@
   align-items: center;
   background-color: #1ab394;
   cursor: pointer;
-}
-
-.foodValueChoose .addFood i {
-  color: #ffffff;
 }
 
 .ingredientCookingMethod .ingredientList .list {

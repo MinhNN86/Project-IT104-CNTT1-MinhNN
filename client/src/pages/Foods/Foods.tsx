@@ -60,7 +60,7 @@ export default function Foods() {
 
   // Phân trang
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 10;
+  const pageSize = 5;
 
   const filtered = filteredFood();
   const pagedFood = filtered.slice(

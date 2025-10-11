@@ -1,4 +1,4 @@
-export interface Recipe {
+export interface AddRecipe {
   id?: string;
   coverSrc: string;
   name: string;
@@ -15,4 +15,5 @@ export interface Recipe {
     id: string;
     name: string;
   }[];
+  isLoading: boolean;
 }

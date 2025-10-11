@@ -1,22 +1,31 @@
 import "../../../style/AddNewRecipe.css";
 import IngredientsSection from "./IngredientsSection";
 import CookingMethodSection from "./CookingMethodSection";
-import GlobalAnalysisSection from "./GlobalAnalysisSection";
-import MacronutrientsSection from "./MacronutrientsSection";
-import MicronutrientsSection from "./MicronutrientsSection";
+import NutrientAnalysisSection from "./NutrientAnalysisSection";
+import { useEffect } from "react";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../hooks/useCustomerRedux";
+import { getAllFood } from "../../../apis/food.api";
 
 export default function RecipeDetailMain() {
+  const foodData = useAppSelector((state) => state.food.data);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getAllFood());
+  }, [dispatch]);
+
   return (
     <div className="recipeDetail">
       <div className="ingredientCookingMethod">
-        <IngredientsSection />
+        <IngredientsSection foodData={foodData} />
         <CookingMethodSection />
       </div>
 
       <div className="nutrient">
-        <GlobalAnalysisSection />
-        <MacronutrientsSection />
-        <MicronutrientsSection />
+        <NutrientAnalysisSection />
       </div>
     </div>
   );

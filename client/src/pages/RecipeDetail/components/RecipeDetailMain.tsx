@@ -164,6 +164,7 @@ export default function RecipeDetailMain({ recipeDetail, foodData }: PropType) {
           </div>
         </div>
       </div>
+
       <div className="nutrient">
         <div className="global recipeDetailCard">
           <div className="recipeDetailsTitle">

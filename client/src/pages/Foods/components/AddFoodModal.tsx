@@ -254,7 +254,7 @@ export default function AddFoodModal() {
         </div>
 
         {/* Top grid */}
-        <div style={{ maxHeight: "75vh", overflowY: "auto", paddingRight: 10 }}>
+        <div style={{ maxHeight: "70vh", overflowY: "auto", paddingRight: 10 }}>
           <Form
             form={form}
             layout="vertical"
@@ -671,18 +671,19 @@ export default function AddFoodModal() {
                 </Form.Item>
               </Col>
             </Row>
-            {/* Footer buttons */}
-            <div className="flex justify-end gap-3 mt-6">
-              <Button onClick={handleCloseModal}>Cancel</Button>
-              <Button
-                type="primary"
-                className="!bg-emerald-500"
-                htmlType="submit"
-              >
-                Save and close
-              </Button>
-            </div>
           </Form>
+        </div>
+        {/* Footer buttons */}
+        <div className="flex justify-end gap-3 mt-6">
+          <Button onClick={handleCloseModal}>Cancel</Button>
+          <Button
+            type="primary"
+            className="!bg-emerald-500"
+            htmlType="submit"
+            onClick={handleSubmit}
+          >
+            Save and close
+          </Button>
         </div>
       </div>
     </Modal>
