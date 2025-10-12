@@ -14,6 +14,7 @@ import {
 } from "../../../hooks/useCustomerRedux";
 import { updateAddRecipeIngredients } from "../../../redux/slices/addRecipeSlice";
 import { getAllCategoryFood } from "../../../apis/categoryFood.api";
+import PrettyPagination from "../../../components/PrettyPagination";
 
 type PropType = {
   foodData: Food[];
@@ -97,6 +98,15 @@ export default function IngredientsSection({ foodData }: PropType) {
       }
     });
   }
+
+  // Phân trang
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 5;
+
+  const pagedFood = filteredFood.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
 
   return (
     <div className="ingredient recipeDetailCard">
@@ -195,7 +205,7 @@ export default function IngredientsSection({ foodData }: PropType) {
             </div>
           </div>
 
-          {filteredFood.map((food) => {
+          {pagedFood.map((food) => {
             if (!food.id) return null;
             const foodIdentifier = food.id;
             const isHovered = hoveredFoodId === foodIdentifier;
@@ -252,7 +262,14 @@ export default function IngredientsSection({ foodData }: PropType) {
         </div>
 
         <nav className="paginationFood">
-          <div className="pagination" id="pagination" />
+          <div className="pagination">
+            <PrettyPagination
+              current={currentPage}
+              total={filteredFood.length}
+              pageSize={pageSize}
+              onChange={(page) => setCurrentPage(page)}
+            />
+          </div>
         </nav>
       </div>
     </div>

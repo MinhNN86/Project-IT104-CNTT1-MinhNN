@@ -519,6 +519,17 @@
   cursor: pointer;
 }
 
+/*! Nav Food */
+.paginationFood {
+  display: flex;
+  justify-content: end;
+}
+
+.paginationFood .pagination {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
 .ingredientCookingMethod .ingredientList .list {
   width: 703.33px;
   height: 40px;
