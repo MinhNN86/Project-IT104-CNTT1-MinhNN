@@ -67,7 +67,7 @@ export default function SignIn() {
     // Lưu vào redux
     dispatch(login(user));
     localStorage.setItem("rememberMe", JSON.stringify(rememberMe));
-    localStorage.setItem("currentUser", JSON.stringify({ ...user }));
+    localStorage.setItem("token", JSON.stringify(user.id));
     setTimeout(() => {
       navigate("/");
     }, 2000);

@@ -12,6 +12,7 @@ import { useAppDispatch, useAppSelector } from "../hooks/useCustomerRedux";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { resetFilter } from "../redux/slices/filterSlice";
+import { logout } from "../redux/slices/userLoginSlice";
 
 export default function SideBar() {
   const sideBar = useAppSelector((state) => state.sidebar.isSidebarOpen);
@@ -20,6 +21,13 @@ export default function SideBar() {
   const path = location.pathname.replace("/", "");
 
   const dispatch = useAppDispatch();
+
+  const handleLogout = () => {
+    localStorage.removeItem("rememberMe");
+    localStorage.removeItem("token");
+    dispatch(logout());
+    navigate("/SignIn");
+  };
 
   return (
     <Sider
@@ -109,7 +117,7 @@ export default function SideBar() {
 
       <div
         className={`sidebar-signout ${sideBar ? "" : "collapsed"}`}
-        onClick={() => navigate("/SignIn")}
+        onClick={handleLogout}
       >
         <img src={signOut} alt="signOut" className="sidebar-signout-icon" />
         {sideBar && <span className="sidebar-signout-text">Sign out</span>}
