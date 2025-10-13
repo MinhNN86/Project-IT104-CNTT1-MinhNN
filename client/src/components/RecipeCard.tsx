@@ -1,9 +1,8 @@
 // RecipeCard.tsx
 import { Card, Tag, Button, Tooltip, Divider } from "antd";
 import { HeartOutlined, HeartFilled, TeamOutlined } from "@ant-design/icons";
-import { useAppSelector } from "../hooks/useCustomerRedux";
-import { useState, useEffect } from "react";
-import type { User } from "../interface/user.interface";
+import { useRecipeFavorite } from "../hooks/useRecipeFavorite";
+import type { Recipe } from "../interface/recipe.interface";
 
 type Nutrients = {
   base: string;
@@ -14,39 +13,32 @@ type Nutrients = {
 };
 
 type Props = {
+  recipe: Recipe;
   id: string;
   image: string;
   ribbonText?: string;
   title: string;
   author: string;
   category: string;
-  likes: number;
   nutrients: Nutrients;
   openRecipeDetail: () => void;
 };
 
 export default function RecipeCard({
+  recipe,
   id,
   image,
   ribbonText = "Community Recipes",
   title,
   author,
   category,
-  likes,
   nutrients,
   openRecipeDetail,
 }: Props) {
-  const userLogin: User = useAppSelector((state) => state.userLogin.user);
-  // Kiểm tra recipe có mình có yêu thích hay không
-  const [isRecipeFavorite, setIsRecipeFavorite] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (userLogin.favorites && userLogin.favorites.includes(id)) {
-      setIsRecipeFavorite(true);
-    } else {
-      setIsRecipeFavorite(false);
-    }
-  }, [userLogin.favorites, id]);
+  const { isRecipeFavorite, currentLikes, toggleFavorite } = useRecipeFavorite(
+    recipe,
+    id
+  );
 
   return (
     <Card
@@ -54,7 +46,6 @@ export default function RecipeCard({
       className="rounded-2xl shadow-sm border-2 border-gray-200/70 hover:!border-emerald-400 transition-colors cursor-pointer"
       styles={{ body: { padding: 0 } }}
       style={{ width: 580, height: 220 }}
-      onClick={openRecipeDetail}
     >
       <div className="grid grid-cols-12">
         <div className="col-span-5 relative">
@@ -72,7 +63,10 @@ export default function RecipeCard({
         <div className="col-span-7">
           <div className="p-3">
             <div className="flex items-start justify-between">
-              <h2 className="text-[15px] font-semibold leading-snug text-gray-900 max-w-[85%]">
+              <h2
+                className="text-[15px] font-semibold leading-snug text-gray-900 max-w-[85%]"
+                onClick={openRecipeDetail}
+              >
                 {title}
               </h2>
 
@@ -87,8 +81,9 @@ export default function RecipeCard({
                       <HeartOutlined />
                     )
                   }
+                  onClick={toggleFavorite}
                 >
-                  <span className="ml-1 text-gray-500">{likes}</span>
+                  <span className="ml-1 text-gray-500">{currentLikes}</span>
                 </Button>
               </Tooltip>
             </div>

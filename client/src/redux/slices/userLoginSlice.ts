@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { updateUser } from "../../apis/user.api";
+import type { User } from "../../interface/user.interface";
 
-const initialState = {
+const initialState: { user: User } = {
   user: {
     id: "",
     email: "",
@@ -27,6 +29,11 @@ const userLoginSlice = createSlice({
         favorites: [],
       };
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(updateUser.fulfilled, (state, action) => {
+      state.user = action.payload;
+    });
   },
 });
 

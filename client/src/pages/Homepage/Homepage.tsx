@@ -34,8 +34,8 @@ export default function Homepage() {
 
   // Lọc recipe theo filterData
   const filteredRecipe = (() => {
-    let filtered = recipeData.data.filter((recipe: Recipe) =>
-      userLogin.favorites.includes(recipe.id)
+    let filtered = recipeData.data.filter(
+      (recipe: Recipe) => recipe.id && userLogin.favorites.includes(recipe.id)
     );
 
     // Lọc theo searchValue
@@ -130,21 +130,23 @@ export default function Homepage() {
           paddingRight: 16,
         }}
       >
-        {pagedRecipe.map((recipe: Recipe) => (
-          <RecipeCard
-            key={recipe.id}
-            id={recipe.id}
-            image={recipe.coverSrc}
-            title={recipe.name}
-            author={recipe.author}
-            category={recipe.category
-              .map((cat: RecipeCategory) => cat.name)
-              .join(", ")}
-            likes={recipe.likes}
-            nutrients={calculateNutrients(recipe.ingredients)}
-            openRecipeDetail={() => handleRecipeDetail(1)}
-          />
-        ))}
+        {pagedRecipe
+          .filter((recipe: Recipe) => recipe.id)
+          .map((recipe: Recipe) => (
+            <RecipeCard
+              recipe={recipe}
+              key={recipe.id}
+              id={recipe.id!}
+              image={recipe.coverSrc}
+              title={recipe.name}
+              author={recipe.author}
+              category={recipe.category
+                .map((cat: RecipeCategory) => cat.name)
+                .join(", ")}
+              nutrients={calculateNutrients(recipe.ingredients)}
+              openRecipeDetail={() => handleRecipeDetail(1)}
+            />
+          ))}
       </div>
 
       <div

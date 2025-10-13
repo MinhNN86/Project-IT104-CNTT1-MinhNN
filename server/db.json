@@ -6,8 +6,8 @@
       "username": "Developer",
       "password": "1",
       "favorites": [
-        "1",
-        "2"
+        "2",
+        "1"
       ]
     },
     {
@@ -89,7 +89,7 @@
       "preparationTime": "00:20",
       "finalWeight": 1100,
       "portions": "4",
-      "likes": 165,
+      "likes": 164,
       "ingredients": [
         "2",
         "3",
@@ -344,6 +344,30 @@
       "cookingMethods": "123",
       "category": [],
       "id": "XJKkD7o"
+    },
+    {
+      "coverSrc": "https://res.cloudinary.com/dwzqispdh/image/upload/v1760318413/tinpuydr4y3nh5t4krqg.jpg",
+      "name": "123",
+      "description": "123",
+      "author": "Developer",
+      "totalTime": "123",
+      "preparationTime": "123",
+      "finalWeight": "123",
+      "portions": "121",
+      "likes": 0,
+      "ingredients": [
+        "1",
+        "1",
+        "3"
+      ],
+      "cookingMethods": "123",
+      "category": [
+        {
+          "id": "1",
+          "name": "vegetarian"
+        }
+      ],
+      "id": "1JLI18M"
     }
   ],
   "food": [

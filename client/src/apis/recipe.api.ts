@@ -20,3 +20,14 @@ export const addRecipe = createAsyncThunk(
     return response.data;
   }
 );
+
+export const updateRecipe = createAsyncThunk(
+  "recipe/updateRecipe",
+  async (recipeRequest: Recipe) => {
+    const response = await axios.put(
+      `http://localhost:3000/recipe/${recipeRequest.id}`,
+      recipeRequest
+    );
+    return response.data;
+  }
+);

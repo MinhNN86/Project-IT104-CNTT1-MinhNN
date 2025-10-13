@@ -143,6 +143,7 @@ export default function Recipes() {
           .filter((recipe: Recipe) => recipe.id)
           .map((recipe: Recipe) => (
             <RecipeCard
+              recipe={recipe}
               key={recipe.id}
               id={recipe.id!}
               image={recipe.coverSrc}
@@ -151,7 +152,6 @@ export default function Recipes() {
               category={recipe.category
                 .map((cat: RecipeCategory) => cat.name)
                 .join(", ")}
-              likes={recipe.likes}
               nutrients={calculateNutrients(recipe.ingredients)}
               openRecipeDetail={() => handleRecipeDetail(recipe.id!)}
             />

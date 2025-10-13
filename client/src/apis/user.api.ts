@@ -19,3 +19,15 @@ export const addUser = createAsyncThunk(
     return response.data;
   }
 );
+
+export const updateUser = createAsyncThunk(
+  "user/addFavoriteRecipeUserData",
+  async (userRequest: User) => {
+    const response = await axios.put(
+      `http://localhost:3000/users/${userRequest.id}`,
+      userRequest
+    );
+
+    return response.data;
+  }
+);

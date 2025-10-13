@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { User } from "../../interface/user.interface";
-import { addUser, getAllUser } from "../../apis/user.api";
+import { addUser, getAllUser, updateUser } from "../../apis/user.api";
 
 type UserInitial = {
   status: "idle" | "pending" | "success" | "failed";
@@ -26,6 +26,9 @@ const userSlice = createSlice({
       })
       .addCase(addUser.fulfilled, (state, action) => {
         state.data.push(action.payload);
+      })
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.data = action.payload;
       });
   },
 });
