@@ -3,15 +3,26 @@ import { HeartFilled, HeartOutlined, TeamOutlined } from "@ant-design/icons";
 import categoryIcon from "../../../assets/recipes/categoryIcon.png";
 import type { Recipe } from "../../../interface/recipe.interface";
 import type { User } from "../../../interface/user.interface";
+import { useRecipeFavorite } from "../../../hooks/useRecipeFavorite";
 
 type PropType = {
+  idRecipe: string;
   recipeDetail: Recipe;
   userLogin: User;
 };
 
-export default function InfoLeft({ recipeDetail, userLogin }: PropType) {
+export default function InfoLeft({
+  idRecipe,
+  recipeDetail,
+  userLogin,
+}: PropType) {
   const checkFavorite: boolean = userLogin.favorites.some(
     (recipe) => recipeDetail.id === recipe
+  );
+
+  const { isRecipeFavorite, currentLikes, toggleFavorite } = useRecipeFavorite(
+    recipeDetail,
+    idRecipe
   );
 
   return (
@@ -22,13 +33,13 @@ export default function InfoLeft({ recipeDetail, userLogin }: PropType) {
             <TeamOutlined style={{ color: "#f97316" }} />
             <div className="communityRecipe">Community Recipes</div>
           </div>
-          <div className="recipeLike">
-            {checkFavorite ? (
+          <div className="recipeLike" onClick={toggleFavorite}>
+            {isRecipeFavorite ? (
               <HeartFilled style={{ color: "#CC5965" }} />
             ) : (
               <HeartOutlined />
             )}
-            <div>{recipeDetail.likes}</div>
+            <div>{currentLikes}</div>
             <div />
           </div>
         </div>
@@ -41,7 +52,7 @@ export default function InfoLeft({ recipeDetail, userLogin }: PropType) {
         </div>
       </div>
       {!checkFavorite && (
-        <div className="renderAddFavorite">
+        <div className="renderAddFavorite" onClick={toggleFavorite}>
           <div className="addFavorite">
             <HeartFilled style={{ color: "#cf1322" }} />
             <div>Add to favorite</div>

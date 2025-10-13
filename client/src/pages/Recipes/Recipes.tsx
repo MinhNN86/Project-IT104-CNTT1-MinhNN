@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import FilterBar from "../../components/FilterBar";
 import HeaderContent from "../../components/HeaderContent";
 import PrettyPagination from "../../components/PrettyPagination";
@@ -75,6 +75,15 @@ export default function Recipes() {
   // Phân trang
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 4;
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageParam = Number(searchParams.get("page")) || 1;
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    setSearchParams({ page: String(page) });
+  };
+  useEffect(() => {
+    setCurrentPage(pageParam);
+  }, [pageParam]);
 
   // Tính toán dữ liệu hiển thị theo trang
   const pagedRecipe = filteredRecipe.slice(
@@ -168,7 +177,7 @@ export default function Recipes() {
         <PrettyPagination
           current={currentPage}
           total={filteredRecipe.length}
-          onChange={(page) => setCurrentPage(page)}
+          onChange={(page) => handlePageChange(page)}
           pageSize={pageSize}
         />
       </div>

@@ -39,10 +39,14 @@ export default function RecipeDetail() {
         alignItems: "center",
       }}
     >
-      {recipeFilter && (
+      {recipeFilter && idRecipes && (
         <>
           <div className="containerRecipeDetail">
-            <InfoLeft recipeDetail={recipeFilter} userLogin={userLogin} />
+            <InfoLeft
+              idRecipe={idRecipes}
+              recipeDetail={recipeFilter}
+              userLogin={userLogin}
+            />
             <RecipeInfo recipeDetail={recipeFilter} />
           </div>
           <CreationBanner />

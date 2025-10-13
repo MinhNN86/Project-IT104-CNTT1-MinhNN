@@ -2,7 +2,7 @@ import PrettyPagination from "../../components/PrettyPagination";
 import FilterBar from "../../components/FilterBar";
 import HeaderContent from "../../components/HeaderContent";
 import RecipeCard from "../../components/RecipeCard";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuthCheck } from "../../hooks/useAuthCheck";
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/useCustomerRedux";
@@ -28,7 +28,7 @@ export default function Homepage() {
     dispatch(getAllFood());
   }, [dispatch]);
 
-  const handleRecipeDetail = (id: number) => {
+  const handleRecipeDetail = (id: string) => {
     navigate(`/Recipes/${id}`);
   };
 
@@ -77,8 +77,19 @@ export default function Homepage() {
   })();
 
   // Phân trang
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const pageSize = 10;
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 10;
+  const pageSize = 4;
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageParam = Number(searchParams.get("page")) || 1;
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    setSearchParams({ page: String(page) });
+  };
+  useEffect(() => {
+    setCurrentPage(pageParam);
+  }, [pageParam]);
 
   // Tính toán dữ liệu hiển thị theo trang
   const pagedRecipe = filteredRecipe.slice(
@@ -144,7 +155,7 @@ export default function Homepage() {
                 .map((cat: RecipeCategory) => cat.name)
                 .join(", ")}
               nutrients={calculateNutrients(recipe.ingredients)}
-              openRecipeDetail={() => handleRecipeDetail(1)}
+              openRecipeDetail={() => handleRecipeDetail(recipe.id!)}
             />
           ))}
       </div>
@@ -159,7 +170,7 @@ export default function Homepage() {
         <PrettyPagination
           current={currentPage}
           total={filteredRecipe.length}
-          onChange={(page) => setCurrentPage(page)}
+          onChange={(page) => handlePageChange(page)}
           pageSize={pageSize}
         />
       </div>

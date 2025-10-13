@@ -11,6 +11,7 @@ import CreateFood from "./components/CreateFood";
 import EditFoodModal from "./components/EditFoodModal";
 import FoodRow from "./components/FoodRow";
 import { useAuthCheck } from "../../hooks/useAuthCheck";
+import { useSearchParams } from "react-router-dom";
 
 export default function Foods() {
   useAuthCheck();
@@ -60,7 +61,16 @@ export default function Foods() {
 
   // Phân trang
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 5;
+  const pageSize = 4;
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageParam = Number(searchParams.get("page")) || 1;
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    setSearchParams({ page: String(page) });
+  };
+  useEffect(() => {
+    setCurrentPage(pageParam);
+  }, [pageParam]);
 
   const filtered = filteredFood();
   const pagedFood = filtered.slice(
@@ -112,7 +122,7 @@ export default function Foods() {
             current={currentPage}
             total={filtered.length}
             pageSize={pageSize}
-            onChange={(page) => setCurrentPage(page)}
+            onChange={(page) => handlePageChange(page)}
           />
         </div>
       </div>
