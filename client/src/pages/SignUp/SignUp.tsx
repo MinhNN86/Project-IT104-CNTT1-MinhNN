@@ -76,6 +76,16 @@ export default function SignUp() {
       return;
     }
 
+    // Check for duplicate username
+    if (userData.data.some((e) => e.username === form.username)) {
+      notification.error({
+        message: "Error",
+        description: "Username already exists.",
+        placement: "topLeft",
+      });
+      return;
+    }
+
     if (!isStrongPassword(form.password)) {
       notification.error({
         message: "Error",
@@ -100,15 +110,26 @@ export default function SignUp() {
       password: form.password,
       favorites: [],
     };
-    dispatch(addUser(newUser));
-    notification.success({
-      message: "Success",
-      description: "Sign up successful.",
-      placement: "topLeft",
-    });
-    setTimeout(() => {
-      navigate("/SignIn");
-    }, 2000);
+    dispatch(addUser(newUser))
+      .unwrap()
+      .then(() => {
+        notification.success({
+          message: "Success",
+          description: "Sign up successful.",
+          placement: "topLeft",
+        });
+        setTimeout(() => {
+          navigate("/SignIn");
+        }, 2000);
+      })
+      .catch((error) => {
+        notification.error({
+          message: "Sign up failed",
+          description:
+            error?.message || "An error occurred during registration.",
+          placement: "topLeft",
+        });
+      });
   };
 
   return (

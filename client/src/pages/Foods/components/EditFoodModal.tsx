@@ -233,7 +233,7 @@ export default function EditFoodModal() {
         </div>
 
         {/* Top grid */}
-        <div style={{ maxHeight: "75vh", overflowY: "auto", paddingRight: 10 }}>
+        <div style={{ maxHeight: "70vh", overflowY: "auto", paddingRight: 10 }}>
           <Form layout="vertical" className="mt-6">
             <Row gutter={16}>
               <Col span={12}>
@@ -638,20 +638,19 @@ export default function EditFoodModal() {
                 </Form.Item>
               </Col>
             </Row>
-
-            {/* Footer buttons */}
-            <div className="flex justify-end gap-3 mt-6">
-              <Button onClick={handleCloseModal}>Cancel</Button>
-              <Button
-                type="primary"
-                className="!bg-emerald-500"
-                onClick={handleSubmit}
-                disabled={formData.source !== userLogin?.username}
-              >
-                Save and close
-              </Button>
-            </div>
           </Form>
+        </div>
+        {/* Footer buttons */}
+        <div className="flex justify-end gap-3 mt-6">
+          <Button onClick={handleCloseModal}>Cancel</Button>
+          <Button
+            type="primary"
+            className="!bg-emerald-500"
+            onClick={handleSubmit}
+            disabled={formData.source !== userLogin?.username}
+          >
+            Save and close
+          </Button>
         </div>
       </div>
     </Modal>

@@ -134,6 +134,7 @@ export default function Homepage() {
   // Thông báo khi người dùng chưa yêu thích recipe nào
   useEffect(() => {
     if (
+      userLogin.username &&
       Array.isArray(userLogin.favorites) &&
       userLogin.favorites.length === 0
     ) {
@@ -142,7 +143,7 @@ export default function Homepage() {
           "No favorite recipes found. Please visit the Recipes page to add your favorites.",
       });
     }
-  }, [userLogin.favorites]);
+  }, [userLogin.favorites, userLogin.username]);
 
   return (
     <div style={{ position: "relative", minHeight: "100%" }}>
