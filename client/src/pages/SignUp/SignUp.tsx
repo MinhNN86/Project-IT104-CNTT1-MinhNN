@@ -60,17 +60,17 @@ export default function SignUp() {
     ) {
       notification.error({
         message: "Error",
-        description: "Điền đủ thông tin vào các ô đăng ký",
+        description: "Please fill in all required fields.",
         placement: "topLeft",
       });
       return;
     }
 
-    // kiểm tra email trùng lặp
+    // Check for duplicate email
     if (userData.data.some((e) => e.email === form.email)) {
       notification.error({
         message: "Error",
-        description: "Email đã tồn tại",
+        description: "Email already exists.",
         placement: "topLeft",
       });
       return;
@@ -80,7 +80,7 @@ export default function SignUp() {
       notification.error({
         message: "Error",
         description:
-          "Mật khẩu phải tối thiểu 8 ký tự, gồm chữ thường, chữ hoa, số và ký tự đặc biệt.",
+          "Password must be at least 8 characters, include lowercase, uppercase, number, and special character.",
         placement: "topLeft",
       });
       return;
@@ -103,7 +103,7 @@ export default function SignUp() {
     dispatch(addUser(newUser));
     notification.success({
       message: "Success",
-      description: "Đăng ký thành công",
+      description: "Sign up successful.",
       placement: "topLeft",
     });
     setTimeout(() => {

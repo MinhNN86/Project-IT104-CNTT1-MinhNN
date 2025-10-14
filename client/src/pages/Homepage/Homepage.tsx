@@ -11,6 +11,7 @@ import type { User } from "../../interface/user.interface";
 import { getAllFood } from "../../apis/food.api";
 import type { Recipe } from "../../interface/recipe.interface";
 import type { RecipeCategory } from "../../interface/recipeCategory.interface";
+import { notification } from "antd";
 
 export default function Homepage() {
   const userLogin: User = useAuthCheck();
@@ -129,6 +130,19 @@ export default function Homepage() {
       protein: `${Math.round(totalProtein / count)} g`,
     };
   };
+
+  // Thông báo khi người dùng chưa yêu thích recipe nào
+  useEffect(() => {
+    if (
+      Array.isArray(userLogin.favorites) &&
+      userLogin.favorites.length === 0
+    ) {
+      notification.info({
+        message:
+          "No favorite recipes found. Please visit the Recipes page to add your favorites.",
+      });
+    }
+  }, [userLogin.favorites]);
 
   return (
     <div style={{ position: "relative", minHeight: "100%" }}>

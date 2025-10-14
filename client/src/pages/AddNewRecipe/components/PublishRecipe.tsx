@@ -31,7 +31,8 @@ export default function PublishRecipe({
       !addRecipeData.portions
     ) {
       notification.error({
-        message: "Vui lòng điền đủ Basic information của Recipe",
+        message:
+          "Please fill in all required basic information for the recipe.",
       });
       dispatch(updateAddRecipeIsLoading(false));
       return;

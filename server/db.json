@@ -5,21 +5,14 @@
       "email": "dev@gmail.com",
       "username": "Developer",
       "password": "1",
-      "favorites": [
-        "1",
-        "2",
-        "Sk1cZ4B"
-      ]
+      "favorites": ["1", "2", "Sk1cZ4B"]
     },
     {
       "email": "123@gmail.com",
-      "username": "123",
-      "password": "MinhNN86!",
+      "username": "Tester",
+      "password": "1",
       "id": "sO_qed9",
-      "favorites": [
-        "3",
-        "4"
-      ]
+      "favorites": []
     }
   ],
   "recipe": [
@@ -34,11 +27,7 @@
       "finalWeight": 978.8,
       "portions": "4",
       "likes": 134,
-      "ingredients": [
-        "1",
-        "2",
-        "3"
-      ],
+      "ingredients": ["1", "2", "3"],
       "cookingMethods": "STEP 1 Heat the oven to 200C/fan 180C/gas 6. Put the cauliflower in an ovenproof dish or tin.",
       "category": [
         {
@@ -62,12 +51,7 @@
       "finalWeight": 850,
       "portions": "3",
       "likes": 198,
-      "ingredients": [
-        "4",
-        "5",
-        "6",
-        "1"
-      ],
+      "ingredients": ["4", "5", "6", "1"],
       "cookingMethods": "STEP 1 Mix lemon juice, olive oil, and herbs. Marinate chicken for 15 minutes then grill until cooked.",
       "category": [
         {
@@ -91,11 +75,7 @@
       "finalWeight": 1100,
       "portions": "4",
       "likes": 164,
-      "ingredients": [
-        "2",
-        "3",
-        "7"
-      ],
+      "ingredients": ["2", "3", "7"],
       "cookingMethods": "STEP 1 Roast the pumpkin at 180C until soft. Blend with cream and season to taste.",
       "category": [
         {
@@ -119,11 +99,7 @@
       "finalWeight": 600,
       "portions": "2",
       "likes": 243,
-      "ingredients": [
-        "1",
-        "4",
-        "5"
-      ],
+      "ingredients": ["1", "4", "5"],
       "cookingMethods": "STEP 1 Cook spaghetti. Sauté garlic in olive oil and toss with pasta.",
       "category": [
         {
@@ -147,12 +123,7 @@
       "finalWeight": 900,
       "portions": "3",
       "likes": 120,
-      "ingredients": [
-        "6",
-        "7",
-        "2",
-        "3"
-      ],
+      "ingredients": ["6", "7", "2", "3"],
       "cookingMethods": "STEP 1 Sauté onions and garlic, add chickpeas and spinach, and simmer until flavors blend.",
       "category": [
         {
@@ -176,11 +147,7 @@
       "finalWeight": 750,
       "portions": "2",
       "likes": 177,
-      "ingredients": [
-        "4",
-        "1",
-        "5"
-      ],
+      "ingredients": ["4", "1", "5"],
       "cookingMethods": "STEP 1 Fry tofu until golden. Add vegetables and stir-fry with sauce for 5 minutes.",
       "category": [
         {
@@ -204,11 +171,7 @@
       "finalWeight": 500,
       "portions": "2",
       "likes": 210,
-      "ingredients": [
-        "6",
-        "2",
-        "3"
-      ],
+      "ingredients": ["6", "2", "3"],
       "cookingMethods": "STEP 1 Preheat oven. Place salmon in foil with lemon and dill. Bake for 20 minutes.",
       "category": [
         {
@@ -232,11 +195,7 @@
       "finalWeight": 300,
       "portions": "1",
       "likes": 156,
-      "ingredients": [
-        "7",
-        "1",
-        "4"
-      ],
+      "ingredients": ["7", "1", "4"],
       "cookingMethods": "STEP 1 Toast bread, mash avocado, and top with a poached egg.",
       "category": [
         {
@@ -260,12 +219,7 @@
       "finalWeight": 1000,
       "portions": "4",
       "likes": 188,
-      "ingredients": [
-        "5",
-        "6",
-        "2",
-        "3"
-      ],
+      "ingredients": ["5", "6", "2", "3"],
       "cookingMethods": "STEP 1 Hollow bell peppers, fill with mix, and bake at 180C for 30-35 minutes.",
       "category": [
         {
@@ -289,11 +243,7 @@
       "finalWeight": 680,
       "portions": "3",
       "likes": 142,
-      "ingredients": [
-        "4",
-        "7",
-        "1"
-      ],
+      "ingredients": ["4", "7", "1"],
       "cookingMethods": "STEP 1 Cook quinoa, let cool, and mix with feta, olives, and dressing.",
       "category": [
         {
@@ -316,10 +266,7 @@
       "finalWeight": "123",
       "portions": "123",
       "likes": 1,
-      "ingredients": [
-        "1",
-        "3"
-      ],
+      "ingredients": ["1", "3"],
       "cookingMethods": "123",
       "category": [
         {
@@ -339,9 +286,7 @@
       "finalWeight": "123",
       "portions": "119",
       "likes": 0,
-      "ingredients": [
-        "1"
-      ],
+      "ingredients": ["1"],
       "cookingMethods": "123",
       "category": [],
       "id": "XJKkD7o"
@@ -356,11 +301,7 @@
       "finalWeight": "123",
       "portions": "121",
       "likes": 0,
-      "ingredients": [
-        "1",
-        "1",
-        "3"
-      ],
+      "ingredients": ["1", "1", "3"],
       "cookingMethods": "123",
       "category": [
         {

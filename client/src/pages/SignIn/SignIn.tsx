@@ -35,7 +35,7 @@ export default function SignIn() {
     if (!form.email || !form.password) {
       notification.error({
         message: "Error",
-        description: "Vui lòng nhập email và mật khẩu.",
+        description: "Please enter your email and password.",
         placement: "topLeft",
       });
       return;
@@ -44,7 +44,7 @@ export default function SignIn() {
     if (!user) {
       notification.error({
         message: "Error",
-        description: "Email không tồn tại.",
+        description: "Email does not exist.",
         placement: "topLeft",
       });
       return;
@@ -52,7 +52,7 @@ export default function SignIn() {
     if (user.password !== form.password) {
       notification.error({
         message: "Error",
-        description: "Mật khẩu không đúng.",
+        description: "Incorrect password.",
         placement: "topLeft",
       });
       return;
@@ -60,7 +60,7 @@ export default function SignIn() {
 
     notification.success({
       message: "Success",
-      description: "Đăng nhập thành công",
+      description: "Sign in successful.",
       placement: "topLeft",
     });
 

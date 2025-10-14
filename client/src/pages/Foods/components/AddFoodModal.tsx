@@ -224,7 +224,7 @@ export default function AddFoodModal() {
       !formData.quantity ||
       !formData.source
     ) {
-      message.error("Vui lòng điền đầy đủ thông tin food !");
+      message.error("Please fill in all required food information!");
       return;
     }
     // Thực hiện logic lưu food ở đây
