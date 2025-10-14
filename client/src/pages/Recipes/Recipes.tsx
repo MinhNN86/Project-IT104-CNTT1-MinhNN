@@ -18,9 +18,9 @@ export default function Recipes() {
 
   const recipesData = useAppSelector((state) => state.recipe.data);
   const foodData = useAppSelector((state) => state.food.data);
-  const { searchValue, sortType, sortBy, category } = useAppSelector(
-    (state) => state.filter
-  );
+  const userLogin = useAppSelector((state) => state.userLogin.user);
+  const { searchValue, sortType, sortBy, category, myRecipesOnly } =
+    useAppSelector((state) => state.filter);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -35,6 +35,13 @@ export default function Recipes() {
   // Lọc recipe theo filterData
   const filteredRecipe = (() => {
     let filtered = [...recipesData];
+
+    // Lọc theo myRecipesOnly
+    if (myRecipesOnly) {
+      filtered = filtered.filter(
+        (recipe: Recipe) => recipe.author === userLogin.username
+      );
+    }
 
     if (searchValue) {
       filtered = filtered.filter((recipe) =>

@@ -18,9 +18,8 @@ export default function Homepage() {
 
   const recipeData = useAppSelector((state) => state.recipe);
   const foodData = useAppSelector((state) => state.food.data);
-  const { searchValue, sortBy, category, sortType } = useAppSelector(
-    (state) => state.filter
-  );
+  const { searchValue, sortBy, category, sortType, myRecipesOnly } =
+    useAppSelector((state) => state.filter);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -34,9 +33,16 @@ export default function Homepage() {
 
   // Lọc recipe theo filterData
   const filteredRecipe = (() => {
-    let filtered = recipeData.data.filter(
-      (recipe: Recipe) => recipe.id && userLogin.favorites.includes(recipe.id)
-    );
+    // Base filter: favorites hoặc myRecipesOnly
+    let filtered = recipeData.data.filter((recipe: Recipe) => {
+      if (!recipe.id) return false;
+
+      if (myRecipesOnly) {
+        return recipe.author === userLogin.username;
+      } else {
+        return userLogin.favorites && userLogin.favorites.includes(recipe.id);
+      }
+    });
 
     // Lọc theo searchValue
     if (searchValue) {

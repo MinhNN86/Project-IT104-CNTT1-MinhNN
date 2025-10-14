@@ -7,7 +7,8 @@
       "password": "1",
       "favorites": [
         "1",
-        "2"
+        "2",
+        "Sk1cZ4B"
       ]
     },
     {
@@ -314,7 +315,7 @@
       "preparationTime": "123",
       "finalWeight": "123",
       "portions": "123",
-      "likes": 0,
+      "likes": 1,
       "ingredients": [
         "1",
         "3"

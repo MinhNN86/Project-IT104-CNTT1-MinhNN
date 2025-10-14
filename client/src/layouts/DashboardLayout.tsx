@@ -8,8 +8,6 @@ export default function DashboardLayout() {
   const location = useLocation();
   const path = location.pathname.replace("/", "");
 
-  console.log(path);
-
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();

@@ -5,6 +5,7 @@ type StateType = {
   sortType: "az" | "za";
   sortBy: string;
   category: string;
+  myRecipesOnly: boolean;
 };
 
 const initialState: StateType = {
@@ -12,6 +13,7 @@ const initialState: StateType = {
   sortType: "az",
   sortBy: "",
   category: "",
+  myRecipesOnly: false,
 };
 
 const filterSlice = createSlice({
@@ -34,11 +36,15 @@ const filterSlice = createSlice({
     updateCategory(state, action) {
       state.category = action.payload;
     },
+    updateMyRecipesOnly(state, action) {
+      state.myRecipesOnly = action.payload;
+    },
     resetFilter(state) {
       state.category = "";
       state.sortType = "az";
       state.searchValue = "";
       state.sortBy = "";
+      state.myRecipesOnly = false;
     },
   },
 });
@@ -49,5 +55,6 @@ export const {
   updateSearchValue,
   updateSortBy,
   updateSortType,
+  updateMyRecipesOnly,
   resetFilter,
 } = filterSlice.actions;

@@ -1,8 +1,14 @@
 // RecipeCard.tsx
 import { Card, Tag, Button, Tooltip, Divider } from "antd";
-import { HeartOutlined, HeartFilled, TeamOutlined } from "@ant-design/icons";
+import {
+  HeartOutlined,
+  HeartFilled,
+  TeamOutlined,
+  EditOutlined,
+} from "@ant-design/icons";
 import { useRecipeFavorite } from "../hooks/useRecipeFavorite";
 import type { Recipe } from "../interface/recipe.interface";
+import { useAppSelector } from "../hooks/useCustomerRedux";
 
 type Nutrients = {
   base: string;
@@ -16,7 +22,6 @@ type Props = {
   recipe: Recipe;
   id: string;
   image: string;
-  ribbonText?: string;
   title: string;
   author: string;
   category: string;
@@ -28,7 +33,6 @@ export default function RecipeCard({
   recipe,
   id,
   image,
-  ribbonText = "Community Recipes",
   title,
   author,
   category,
@@ -39,6 +43,8 @@ export default function RecipeCard({
     recipe,
     id
   );
+  const userLogin = useAppSelector((state) => state.userLogin.user);
+  const checkMyRecipe = recipe.author === userLogin.username;
 
   return (
     <Card
@@ -55,8 +61,19 @@ export default function RecipeCard({
             className="h-[218px] w-full object-cover rounded-l-md"
           />
           <div className="absolute left-3 top-3 bg-white rounded-2xl shadow-sm px-4 py-2 flex items-center gap-2">
-            <TeamOutlined style={{ color: "#f97316" }} />
-            <span className="font-semibold text-orange-500">{ribbonText}</span>
+            {checkMyRecipe ? (
+              <>
+                <EditOutlined className="!text-sky-600" />
+                <span className="text-sky-600 font-semibold">My recipes</span>
+              </>
+            ) : (
+              <>
+                <TeamOutlined style={{ color: "#f97316" }} />
+                <span className="font-semibold text-orange-500">
+                  Community Recipes
+                </span>
+              </>
+            )}
           </div>
         </div>
 
